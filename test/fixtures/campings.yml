@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  user: one
+  camping_type: 1
+  commune: one
+  address: MyString
+  latitude: MyString
+  longitude: MyString
+  reglas: MyString
+
+two:
+  name: MyString
+  description: MyString
+  user: two
+  camping_type: 1
+  commune: two
+  address: MyString
+  latitude: MyString
+  longitude: MyString
+  reglas: MyString

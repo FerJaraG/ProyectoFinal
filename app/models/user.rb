@@ -1,0 +1,14 @@
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  enum user_type: [:person, :camping]
+  belongs_to :commune, optional: true 
+  belongs_to :city, optional: true 
+  belongs_to :region, optional:true 
+  belongs_to :country, optional: true
+  belongs_to :genre, optional: true
+  has_many :camping_profiles
+  mount_uploader :image, ImageUploader
+end

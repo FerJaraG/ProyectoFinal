@@ -1,0 +1,64 @@
+<h1>Perfil Camping</h1>
+<div class="row">
+	<%= form_with(model: @camping, local: true) do |f| %>
+
+		<div class="form-group">
+			<%= f.label :name %>
+			<%= f.text_field :name, autofocus: true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</div>
+
+		<div class="form-group">
+	    	<%= f.label :camping_type %><br>
+	    	<%= f.select :camping_type, Camping.camping_types.keys%>
+	    </div><br>
+
+	    <div class="form-group">
+			<%= f.label :address %>
+			<%= f.text_field :address%>
+		</div>
+
+		<div class="form-group">
+	      <%= f.label :region_id %><br />
+    	  <%= f.collection_select :region_id, Region.order(:name), :id, :name, include_blank: true %>
+	    </div><br>
+
+		<div class="form-group">
+	      <%= f.label :city_id%><br>
+	      <%= f.collection_select :city_id, City.order(:name), :id, :name, include_blank: true %>
+	    </div><br>
+
+		<div class="form-group">
+	      <%= f.label :city_id%><br>
+	      <%= f.collection_select :city_id, City.order(:name), :id, :name, include_blank: true %>
+	    </div><br>
+
+	    <div class="form-group">
+	      <%= f.label :commune_id%><br>
+	      <%= f.collection_select :commune_id, Commune.order(:name), :id, :name, include_blank: true %>
+	    </div><br>
+
+	    <div class="form-group">
+			<%= f.label :latitude %>
+			<%= f.text_field :latitude%>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :longitude %>
+			<%= f.text_field :longitude%>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :rules %>
+			<%= f.text_area :rules %>
+		</div>
+
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
