@@ -1,0 +1,4 @@
+<% @cities.each do |city| %>
+	$('#cities').append('<option id="<%= city.id %>"><%= city.name %></option>')
+<% end %>
+

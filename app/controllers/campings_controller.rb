@@ -11,6 +11,9 @@ class CampingsController < ApplicationController
 
   def new
   	@camping = Camping.new
+    @regions = Region.all.map{|s|[s.name, s.id]}
+    @cities = City.all.map{|s|[s.name, s.id]}
+    @communes = Commune.all.map{|s|[s.name, s.id]}
   end
 
   def create
@@ -21,6 +24,14 @@ class CampingsController < ApplicationController
     else
       redirect_to campings_new_path, notice: 'No se pudo crear camping :('
     end
+  end
+
+  def return_cities
+    @cities = City.where(region_id: params[:region_id])
+  end
+
+  def return_communes
+    @communes = Commune.where(city_id: params[:city_id])
   end
 
   def camping_params

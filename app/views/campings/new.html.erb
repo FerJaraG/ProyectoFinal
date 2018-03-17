@@ -24,17 +24,17 @@
 
 		<div class="form-group">
 	      	<%= f.label :region %><br />
-			<%= f.select :region, options_for_select(Region.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Región', id: 'asdasddsa'%>
+			<%= f.select :region, options_for_select(@regions),{prompt: 'Seleccione region'}, {id: 'regions'}%>
 	    </div><br>
 
 		<div class="form-group">
 	      <%= f.label :city_id%><br>
-	      <%= f.collection_select :city_id, City.order(:name), :id, :name, include_blank: true, id: :city_id %>
+	      <%= f.select :city_id, options_for_select(@cities),{prompt: 'Seleccione Ciudad'}, {id: 'cities'}%>
 	    </div><br>
 
 	    <div class="form-group">
 	      <%= f.label :commune_id%><br>
-	      <%= f.collection_select :commune_id, Commune.order(:name), :id, :name, include_blank: true %>
+	      <%= f.select :commune_id, options_for_select(@communes),{prompt: 'Seleccione Comuna'}, {id: 'communes'}%>
 	    </div><br>
 
 	    <div class="form-group">
@@ -50,6 +50,8 @@
 		<div class="form-group">
 			<%= f.label :rules %>
 			<%= f.text_area :rules %>
+	
+			
 		</div>
 
 		<div class="actions">

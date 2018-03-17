@@ -6,28 +6,58 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#Commune.destroy_all
-# Commune.create(name: "Maipu", city_id: 1)
-# Commune.create(name: "San Antonio", city_id: 2)
-# Commune.create(name: "San Pedro", city_id: 3)
-
+# Commune.destroy_all
 # City.destroy_all
- # City.create(name: "Santiago", region_id: 1)
- # City.create(name: "Viña del Mar", region_id: 2)
- # City.create(name: "Calama", region_id: 3)
+# Region.destroy_all
+# Country.destroy_all
+# Genre.destroy_all
 
-#Region.destroy_all
-# Region.create(name: "Metropolitana", country_id: 1)
-# Region.create(name: "Valparaiso", country_id: 1)
-# Region.create(name: "Atacama", country_id: 1)
+# Country.create(name: "Chile")
 
-#Country.destroy_all
-#Country.create(name: "Chile")
+# Region.create(name: 'Metropolitana", country_id: 1)
+# Region.create(name: 'Valparaiso", country_id: 1)
+# Region.create(name: 'Atacama", country_id: 1)
+
+# City.create(name: 'Santiago', region_id: 1)
+# City.create(name: 'Viña del Mar', region_id: 2)
+# City.create(name: 'Calama', region_id: 3)
+# City.create(name: 'Talagante', region_id: 1)
+# City.create(name: 'Melipilla', region_id: 1)
+# City.create(name: 'Maipo', region_id: 1)
+# City.create(name: 'Cordillera', region_id: 1)
+City.create(name: 'Chacabuco', region_id: 1)
+
+Commune.create(name: 'Colina', city_id: 4)
+Commune.create(name: 'Lampa', city_id: 4)
+Commune.create(name: 'Tiltil', city_id: 4)
+
+#Commune.create(name: 'Maipu', city_id: 1)
+#Commune.create(name: 'Maipu', city_id: 1)
+#Commune.create(name: 'San Antonio", city_id: 2)
+# Commune.create(name: 'San Pedro", city_id: 3)
 
 
-#Genre.destroy_all
-# Genre.create(name: "Femenino")
-# Genre.create(name: "Masculino")
-# Genre.create(name: "Indefinido")
-# Genre.create(name: "Prefiere no decir")
+# Genre.create(name: 'Femenino')
+# Genre.create(name: 'Masculino')
+# Genre.create(name: 'Indefinido')
+# Genre.create(name: 'Prefiero no decir')
+
+# Service.create(name: 'Baño')
+# Service.create(name: 'Ducha')
+# Service.create(name: 'Lavadora')
+# Service.create(name: 'Piscina')
+# Service.create(name: 'Lavaderos')
+# Service.create(name: 'Juegos Infantiles')
+# Service.create(name: 'Telefono')
+# Service.create(name: 'Internet')
+# Service.create(name: 'Quincho')
+# Service.create(name: 'Arriendo Bicicletas')
+# Service.create(name: 'Se Permiten Mascotas')
+# Service.create(name: 'Cancha de Futbol')
+# Service.create(name: 'Cancha de Voley')
+# Service.create(name: 'Arriendo de Caballos')
+# Service.create(name: 'Mesas Picnic')
+# Service.create(name: 'Almacen Interior')
+
+
 

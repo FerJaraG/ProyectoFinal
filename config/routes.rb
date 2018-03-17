@@ -9,13 +9,20 @@ Rails.application.routes.draw do
 
   post 'campings', to: 'campings#create'
 
-  root 'campings#index'
+  post 'campings/return_cities'
+
+  post 'campings/return_communes'
+
+  
+
+
 
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
 
+root 'campings#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
