@@ -13,10 +13,10 @@
           <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
         <li class="nav-item active">
-          <a class="nav-link disabled" href="<%= edit_user_registration_path %>">Perfil</a>
+          <a class="nav-link" href="<%= edit_user_registration_path %>">Perfil Usuario</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link disabled" href="<%= campings_new_path %>">Perfil Camping</a>
+          <a class="nav-link" href="<%= campings_path %>">Camping</a>
         </li>
       <% else %>
     </ul>

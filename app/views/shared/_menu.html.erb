@@ -1,0 +1,54 @@
+<!--Test -->
+<div id="test">
+  <div class="user">
+    <br>
+      <%= current_user.email %> <br>
+    <br>
+  </div>
+
+  <div class="list-group">
+
+      <a href="#item-1" class="list-group-item" data-toggle="collapse">Perfil</a>
+      <div class="list-group collapse" id="item-1">
+          <a href="<%= new_camping_path %>" class="list-group-item">Crear Camping</a>
+          <a href="#" class="list-group-item">Editar Camping</a>
+      </div>
+
+      <a href="#item-2" class="list-group-item" data-toggle="collapse">Sitios Camping</a>
+
+      <div class="list-group collapse" id="item-2">
+          <a href="" class="list-group-item">Ver Sitios</a>
+          <a href="" class="list-group-item">Agregar Sitio</a>
+
+      </div>
+
+      <a href="#item-3" class="list-group-item" data-toggle="collapse">Planes</a>
+
+      <div class="list-group collapse" id="item-3">
+          <a href="#" class="list-group-item">Ver Planes</a>
+          <a href="#" class="list-group-item">Agregar Plan</a>
+      </div>
+
+      <a href="#item-4" class="list-group-item" data-toggle="collapse">Reservas</a>
+
+      <div class="list-group collapse" id="item-4">
+          <a href="#" class="list-group-item">Ver Reservas</a>
+          <a href="#" class="list-group-item">Editar Reserva</a>
+      </div>
+
+      <a href="#item-5" class="list-group-item" data-toggle="collapse">Opiniones</a>
+
+      <div class="list-group collapse" id="item-5">
+          <a href="#" class="list-group-item">Ver Opiniones</a>
+      </div>
+
+      <a href="#item-6" class="list-group-item" data-toggle="collapse">Transacciones</a>
+
+      <div class="list-group collapse" id="item-6">
+          <a href="#" class="list-group-item">Ver Transacciones</a>
+      </div>
+
+  </div>
+
+</div>
+<!--/Test -->

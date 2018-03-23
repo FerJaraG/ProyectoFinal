@@ -1,5 +1,5 @@
 <h1>Perfil Camping</h1>
-<div class="row">
+<div class="">
 	<%= form_with(model: @camping, local: true) do |f| %>
 
 		<div class="form-group">
@@ -37,21 +37,24 @@
 	      <%= f.select :commune_id, options_for_select(@communes),{prompt: 'Seleccione Comuna'}, {id: 'communes'}%>
 	    </div><br>
 
-	    <div class="form-group">
-			<%= f.label :latitude %>
-			<%= f.text_field :latitude%>
-		</div>
-
-		<div class="form-group">
-			<%= f.label :longitude %>
-			<%= f.text_field :longitude%>
-		</div>
-
 		<div class="form-group">
 			<%= f.label :rules %>
 			<%= f.text_area :rules %>
-	
-			
+		</div>
+
+		<div class="form-group">
+  			<%= f.label :images %>
+  			<%= f.file_field :images, id: :image_image, multiple: true, class: "form-control" %>
+  		 </div><br>
+
+  		 <div class="field">
+  			 <%= f.label "Servicios" %><br />
+ 			 <%= f.collection_check_boxes :service_ids, Service.all, :id, :name do |b| %>
+		   		 <div class="collection-check-box">
+		  			<%= b.check_box %>
+		      		<%= b.label %>
+		    	</div>
+ 			 <% end %>
 		</div>
 
 		<div class="actions">
@@ -59,3 +62,43 @@
 		</div>
 	<% end %>
 </div>
+
+<%= render 'shared/menu' %>
+
+<script>
+	$('#test').BootSideMenu();
+	$('#demo').BootSideMenu({
+
+	  // 'left' or 'right'
+	  side: "left",
+
+	  // animation speed
+	  duration: 500,
+
+	  // restore last menu status on page refresh
+	  remember: true,
+
+	  // auto close
+	  autoClose: false,
+
+	  // push the whole page
+	  pushBody: true,
+
+	  // close on click
+	  closeOnClick: true,
+
+	  // width
+	  width: "15%",
+
+	  // icons
+	  icons: {
+	    left: 'glyphicon glyphicon-chevron-left',
+	    right: 'glyphicon glyphicon-chevron-right',
+	    down: 'glyphicon glyphicon-chevron-down'
+	  },
+
+	  // 'dracula', 'darkblue', 'zenburn', 'pinklady', 'somebook'
+	  theme: '',
+	  
+	});
+</script>

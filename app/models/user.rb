@@ -9,6 +9,7 @@ class User < ApplicationRecord
   belongs_to :region, optional:true 
   belongs_to :country, optional: true
   belongs_to :genre, optional: true
-  has_many :camping_profiles
+  has_many :campings
   mount_uploader :image, ImageUploader
 end
+

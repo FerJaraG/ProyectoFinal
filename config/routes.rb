@@ -1,28 +1,22 @@
 Rails.application.routes.draw do
-  get 'campings/index'
 
-  get 'campings/search'
-
-  get 'campings/show'
-
-  get 'campings/new'
-
-  post 'campings', to: 'campings#create'
-
-  post 'campings/return_cities'
-
-  post 'campings/return_communes'
-
-  
-
-
+  resources :campings do  
+      get :home, on: :collection
+      resources :campsites
+      resources :campservices
+  end
 
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
+      
+  post 'campings/return_cities'
 
-root 'campings#index'
+  post 'campings/return_communes'
+  
+
+  root 'campings#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

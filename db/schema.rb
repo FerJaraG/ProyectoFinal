@@ -10,26 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314210918) do
+ActiveRecord::Schema.define(version: 20180323185043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "camping_profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.bigint "user_id"
-    t.integer "camping_type"
-    t.bigint "commune_id"
-    t.string "address"
-    t.string "latitude"
-    t.string "longitude"
-    t.string "rules"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commune_id"], name: "index_camping_profiles_on_commune_id"
-    t.index ["user_id"], name: "index_camping_profiles_on_user_id"
-  end
 
   create_table "campings", force: :cascade do |t|
     t.string "name"
@@ -43,8 +27,23 @@ ActiveRecord::Schema.define(version: 20180314210918) do
     t.string "rules"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "images"
     t.index ["commune_id"], name: "index_campings_on_commune_id"
     t.index ["user_id"], name: "index_campings_on_user_id"
+  end
+
+  create_table "campings_services", id: false, force: :cascade do |t|
+    t.bigint "camping_id", null: false
+    t.bigint "service_id", null: false
+  end
+
+  create_table "campsites", force: :cascade do |t|
+    t.string "identifier"
+    t.string "description"
+    t.bigint "camping_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camping_id"], name: "index_campsites_on_camping_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -83,6 +82,14 @@ ActiveRecord::Schema.define(version: 20180314210918) do
     t.index ["country_id"], name: "index_regions_on_country_id"
   end
 
+  create_table "seasons", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -116,10 +123,9 @@ ActiveRecord::Schema.define(version: 20180314210918) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "camping_profiles", "communes"
-  add_foreign_key "camping_profiles", "users"
   add_foreign_key "campings", "communes"
   add_foreign_key "campings", "users"
+  add_foreign_key "campsites", "campings"
   add_foreign_key "cities", "regions"
   add_foreign_key "communes", "cities"
   add_foreign_key "regions", "countries"

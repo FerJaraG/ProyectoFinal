@@ -1,12 +1,13 @@
 class CampingsController < ApplicationController
+  before_action :set_camping, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:home]
+
   def index
   	@campings = Camping.all
   end
 
-  def search
-  end
-
-  def show
+  def home
+    
   end
 
   def new
@@ -26,6 +27,28 @@ class CampingsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @camping.update(camping_params)
+      redirect_to @camping, notice: 'El sitio se ha actualizado con exito'
+    else
+      redirect_to edit_camping_path(@camping.id), notice: 'No se ha podido actualizar el registro'
+    end
+  end
+
+  def destroy
+    @camping.destroy
+    redirect_to root_path, notice: 'El registro se ha eliminado con exito'
+  end
+
+  def search
+  end
+  
   def return_cities
     @cities = City.where(region_id: params[:region_id])
   end
@@ -34,8 +57,19 @@ class CampingsController < ApplicationController
     @communes = Commune.where(city_id: params[:city_id])
   end
 
+  private
+
+  def set_camping
+    @camping = Camping.find(params[:id])
+    
+  end
+
+  def set_campsite
+      @campsite = Campsite.find(params[:campsite_id])
+    end
+  
   def camping_params
-    params.require(:camping).permit(:name,:description,:user_id,:camping_type,:commune_id,:address,:latitude,:longitude,:rules)
+    params.require(:camping).permit(:name,:description,:user_id,:camping_type,:commune_id,:address,:latitude,:longitude,:rules, {images: []}, service_ids:[])
   end
   
 end

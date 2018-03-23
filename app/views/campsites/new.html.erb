@@ -1,18 +1,23 @@
-<h1>detalle camping</h1>
+<h1>new campsite</h1>
 
-<table>
-	<tr>
-		<th>Nombre</th>
-		<th>Descripcion</th>
-	</tr>
-		<tr>
-			<td><%= @camping.name %> </td>
-			<td><%= @camping.description %> </td>
-			<td><%= @camping.camping_type %> </td>
-		</tr>
-	
+<div class="">
+	<%= form_with(model: [@camping, @campsite], local: true) do |f| %>
 
-</table>
+		<div class="form-group">
+			<%= f.label :identifier %>
+			<%= f.text_field :identifier, autofocus: true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</div>
+
+	    <div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
 
 <%= render 'shared/menu' %>
 
