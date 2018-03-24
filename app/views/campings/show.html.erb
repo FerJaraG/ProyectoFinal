@@ -1,55 +1,23 @@
-<h1>detalle camping</h1>
-
-<table>
-	<tr>
-		<th>Nombre</th>
-		<th>Descripcion</th>
-	</tr>
-		<tr>
-			<td><%= @camping.name %> </td>
-			<td><%= @camping.description %> </td>
-			<td><%= @camping.camping_type %> </td>
-		</tr>
-	
-
-</table>
-
+<br>
+<br>
+<br>
 <%= render 'shared/menu' %>
+<main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+	<h1>detalle camping</h1>
 
-<script>
-	$('#test').BootSideMenu();
-	$('#demo').BootSideMenu({
+	<table>
+		<tr>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+		</tr>
+			<tr>
+				<td><%= @camping.name %> </td>
+				<td><%= @camping.description %> </td>
+				<td><%= @camping.camping_type %> </td>
+			</tr>
+		
 
-	  // 'left' or 'right'
-	  side: "left",
+	</table>
 
-	  // animation speed
-	  duration: 500,
+</main>
 
-	  // restore last menu status on page refresh
-	  remember: true,
-
-	  // auto close
-	  autoClose: false,
-
-	  // push the whole page
-	  pushBody: true,
-
-	  // close on click
-	  closeOnClick: true,
-
-	  // width
-	  width: "15%",
-
-	  // icons
-	  icons: {
-	    left: 'glyphicon glyphicon-chevron-left',
-	    right: 'glyphicon glyphicon-chevron-right',
-	    down: 'glyphicon glyphicon-chevron-down'
-	  },
-
-	  // 'dracula', 'darkblue', 'zenburn', 'pinklady', 'somebook'
-	  theme: '',
-	  
-	});
-</script>

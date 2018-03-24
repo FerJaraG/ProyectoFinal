@@ -1,60 +1,28 @@
-<h1>new campsite</h1>
-
-<div class="">
-	<%= form_with(model: [@camping, @campsite], local: true) do |f| %>
-
-		<div class="form-group">
-			<%= f.label :identifier %>
-			<%= f.text_field :identifier, autofocus: true %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label :description %>
-			<%= f.text_area :description %>
-		</div>
-
-	    <div class="actions">
-			<%= f.submit %>
-		</div>
-	<% end %>
-</div>
-
+<br>
+<br>
+<br>
 <%= render 'shared/menu' %>
+<main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+	<h1>new campsite</h1>
 
-<script>
-	$('#test').BootSideMenu();
-	$('#demo').BootSideMenu({
+	<div class="">
+		<%= form_with(model: [@camping, @campsite], local: true) do |f| %>
 
-	  // 'left' or 'right'
-	  side: "left",
+			<div class="form-group">
+				<%= f.label :identifier %>
+				<%= f.text_field :identifier, autofocus: true %>
+			</div>
 
-	  // animation speed
-	  duration: 500,
+			<div class="form-group">
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+			</div>
 
-	  // restore last menu status on page refresh
-	  remember: true,
+			<div class="actions">
+				<%= f.submit %>
+			</div>
+		<% end %>
+	</div>
 
-	  // auto close
-	  autoClose: false,
+</main>
 
-	  // push the whole page
-	  pushBody: true,
-
-	  // close on click
-	  closeOnClick: true,
-
-	  // width
-	  width: "15%",
-
-	  // icons
-	  icons: {
-	    left: 'glyphicon glyphicon-chevron-left',
-	    right: 'glyphicon glyphicon-chevron-right',
-	    down: 'glyphicon glyphicon-chevron-down'
-	  },
-
-	  // 'dracula', 'darkblue', 'zenburn', 'pinklady', 'somebook'
-	  theme: '',
-	  
-	});
-</script>

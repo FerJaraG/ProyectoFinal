@@ -1,54 +1,24 @@
-<!--Test -->
-<div id="test">
-  <div class="user">
-    <br>
-      <%= current_user.email %> <br>
-    <br>
-  </div>
+<div class="container-fluid">
+        <div class="row d-flex d-md-block flex-nowrap wrapper">
+            <div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+                    <div class="list-group border-0 card text-center text-md-left">
+                    <a href="<%= campings_path %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="d-none d-md-inline">Mis Campings</span></a>
+                    <a href="<%= edit_camping_path(@camping) %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="d-none d-md-inline">Editar Camping</span></a>
+                    <a href="<%= camping_campsites_path(@camping) %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Mis Sitios</span></a>
+                    <a href="<%= new_camping_campsite_path(@camping) %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="d-none d-md-inline">Agregar Sitio</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Ver Planes</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Agregar Plan</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Ver Temporadas</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-star"></i> <span class="d-none d-md-inline">Agregar Temporada</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Ver Reservas</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Ver Opiniones</span></a>
+                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Ver Transacciones</span></a>
+                </div>
+            </div>
+            <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+                
+            </main>
+        </div>
+    </div>
 
-  <div class="list-group">
 
-      <a href="#item-1" class="list-group-item" data-toggle="collapse">Perfil</a>
-      <div class="list-group collapse" id="item-1">
-          <a href="<%= campings_path %>" class="list-group-item">Mis Campings</a>
-          <a href="<%= edit_camping_path(@camping) %>" class="list-group-item">Editar Camping</a>
-      </div>
-
-      <a href="#item-2" class="list-group-item" data-toggle="collapse">Sitios Camping</a>
-
-      <div class="list-group collapse" id="item-2">
-          <a href="<%= camping_campsites_path(@camping) %>" class="list-group-item">Ver Sitios</a>
-          <a href="<%= new_camping_campsite_path(@camping) %>" class="list-group-item">Agregar Sitio</a>
-
-      </div>
-
-      <a href="#item-3" class="list-group-item" data-toggle="collapse">Planes</a>
-
-      <div class="list-group collapse" id="item-3">
-          <a href="#" class="list-group-item">Ver Planes</a>
-          <a href="#" class="list-group-item">Agregar Plan</a>
-      </div>
-
-      <a href="#item-4" class="list-group-item" data-toggle="collapse">Reservas</a>
-
-      <div class="list-group collapse" id="item-4">
-          <a href="#" class="list-group-item">Ver Reservas</a>
-          <a href="#" class="list-group-item">Editar Reserva</a>
-      </div>
-
-      <a href="#item-5" class="list-group-item" data-toggle="collapse">Opiniones</a>
-
-      <div class="list-group collapse" id="item-5">
-          <a href="#" class="list-group-item">Ver Opiniones</a>
-      </div>
-
-      <a href="#item-6" class="list-group-item" data-toggle="collapse">Transacciones</a>
-
-      <div class="list-group collapse" id="item-6">
-          <a href="#" class="list-group-item">Ver Transacciones</a>
-      </div>
-
-  </div>
-
-</div>
-<!--/Test -->
