@@ -1,6 +1,7 @@
 class CampsitesController < ApplicationController
 	before_action :set_campsite, only: [:show, :edit, :update, :destroy]
 	before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
+	before_action :authenticate_user!
 
 	def index
 		@campsites = Campsite.all 

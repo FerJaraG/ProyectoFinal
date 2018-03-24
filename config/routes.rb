@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get :home, on: :collection
       resources :campsites
       resources :campservices
+      resources :season
   end
 
   devise_for :users, controllers: {

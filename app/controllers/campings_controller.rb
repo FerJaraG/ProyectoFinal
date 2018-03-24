@@ -21,7 +21,7 @@ class CampingsController < ApplicationController
   	camping = Camping.new(camping_params)
     camping.user = current_user
     if camping.save
-      redirect_to root_path, notice: 'Se creo camping con exito'
+      redirect_to camping_path(camping), notice: 'Se creo camping con exito'
     else
       redirect_to campings_new_path, notice: 'No se pudo crear camping :('
     end
@@ -63,10 +63,6 @@ class CampingsController < ApplicationController
     @camping = Camping.find(params[:id])
     
   end
-
-  def set_campsite
-      @campsite = Campsite.find(params[:campsite_id])
-    end
   
   def camping_params
     params.require(:camping).permit(:name,:description,:user_id,:camping_type,:commune_id,:address,:latitude,:longitude,:rules, {images: []}, service_ids:[])
