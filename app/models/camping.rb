@@ -8,4 +8,7 @@ class Camping < ApplicationRecord
   mount_uploaders :images, ImageUploader
   has_many :campsites
   has_and_belongs_to_many :services
+  has_many :plans
+  has_many :bookings 
+  has_many :transactions through :bookings
 end

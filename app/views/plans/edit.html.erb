@@ -1,0 +1,32 @@
+<br>
+<br>
+<br>
+<%= render 'shared/menu' %>
+<main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+<h1>editar plan</h1>
+
+<div class="">
+	<%= form_with(model: [@camping, @plan], local: true) do |f| %>
+
+		<div class="form-group">
+			<%= f.label :person_type %><br>
+            <%= f.select :person_type, Plan.person_types.keys  %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :season%><br>
+            <%= f.select :season, options_for_select(Season.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Temporada'%>
+		</div>
+
+        <div class="form-group">
+            <%= f.label :price %><br />
+            <%= f.number_field :price, class: "form-control"%>
+        </div>
+
+	    <div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
+
+</main>

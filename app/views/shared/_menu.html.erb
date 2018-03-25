@@ -3,13 +3,11 @@
             <div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
                     <div class="list-group border-0 card text-center text-md-left">
                     <a href="<%= campings_path %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="d-none d-md-inline">Mis Campings</span></a>
-                    <a href="<%= edit_camping_path(@camping) %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="d-none d-md-inline">Editar Camping</span></a>
+                    <a href="<%= new_camping_path %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="d-none d-md-inline">Agregar Camping</span></a>
                     <a href="<%= camping_campsites_path(@camping) %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="d-none d-md-inline">Mis Sitios</span></a>
                     <a href="<%= new_camping_campsite_path(@camping) %>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="d-none d-md-inline">Agregar Sitio</span></a>
-                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Ver Planes</span></a>
-                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Agregar Plan</span></a>
-                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Ver Temporadas</span></a>
-                    <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-star"></i> <span class="d-none d-md-inline">Agregar Temporada</span></a>
+                    <a href="<%= camping_plans_path(@camping)%>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Ver Planes</span></a>
+                    <a href="<%= new_camping_plan_path(@camping)%>" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Agregar Plan</span></a>
                     <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="d-none d-md-inline">Ver Reservas</span></a>
                     <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="d-none d-md-inline">Ver Opiniones</span></a>
                     <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline">Ver Transacciones</span></a>

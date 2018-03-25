@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323185043) do
+ActiveRecord::Schema.define(version: 20180325214723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "check_in"
+    t.date "check_out"
+    t.float "price_per_day"
+    t.float "total_price"
+    t.date "booking_date"
+    t.integer "adults_quantity"
+    t.integer "kids_quantity"
+    t.string "observations"
+    t.bigint "camping_id"
+    t.bigint "user_id"
+    t.bigint "campsite_id"
+    t.bigint "paymentstatus_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camping_id"], name: "index_bookings_on_camping_id"
+    t.index ["campsite_id"], name: "index_bookings_on_campsite_id"
+    t.index ["paymentstatus_id"], name: "index_bookings_on_paymentstatus_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "campings", force: :cascade do |t|
     t.string "name"
@@ -68,10 +89,40 @@ ActiveRecord::Schema.define(version: 20180323185043) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "currencies", force: :cascade do |t|
+    t.string "iso"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "paymentmethods", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paymentstatuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.bigint "season_id"
+    t.integer "person_type"
+    t.bigint "camping_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camping_id"], name: "index_plans_on_camping_id"
+    t.index ["season_id"], name: "index_plans_on_season_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -80,6 +131,15 @@ ActiveRecord::Schema.define(version: 20180323185043) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_regions_on_country_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.string "comment"
+    t.float "ranking"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "seasons", force: :cascade do |t|
@@ -94,6 +154,18 @@ ActiveRecord::Schema.define(version: 20180323185043) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.float "amount"
+    t.bigint "paymentmethod_id"
+    t.bigint "currency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_transactions_on_booking_id"
+    t.index ["currency_id"], name: "index_transactions_on_currency_id"
+    t.index ["paymentmethod_id"], name: "index_transactions_on_paymentmethod_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -123,12 +195,22 @@ ActiveRecord::Schema.define(version: 20180323185043) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "campings"
+  add_foreign_key "bookings", "campsites"
+  add_foreign_key "bookings", "paymentstatuses"
+  add_foreign_key "bookings", "users"
   add_foreign_key "campings", "communes"
   add_foreign_key "campings", "users"
   add_foreign_key "campsites", "campings"
   add_foreign_key "cities", "regions"
   add_foreign_key "communes", "cities"
+  add_foreign_key "plans", "campings"
+  add_foreign_key "plans", "seasons"
   add_foreign_key "regions", "countries"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "transactions", "bookings"
+  add_foreign_key "transactions", "currencies"
+  add_foreign_key "transactions", "paymentmethods"
   add_foreign_key "users", "communes"
   add_foreign_key "users", "genres"
 end

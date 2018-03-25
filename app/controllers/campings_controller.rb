@@ -61,7 +61,6 @@ class CampingsController < ApplicationController
 
   def set_camping
     @camping = Camping.find(params[:id])
-    
   end
   
   def camping_params

@@ -25,16 +25,16 @@
 # City.create(name: 'Melipilla', region_id: 1)
 # City.create(name: 'Maipo', region_id: 1)
 # City.create(name: 'Cordillera', region_id: 1)
-City.create(name: 'Chacabuco', region_id: 1)
+# City.create(name: 'Chacabuco', region_id: 1)
 
-Commune.create(name: 'Colina', city_id: 4)
-Commune.create(name: 'Lampa', city_id: 4)
-Commune.create(name: 'Tiltil', city_id: 4)
+# Commune.create(name: 'Colina', city_id: 4)
+# Commune.create(name: 'Lampa', city_id: 4)
+# Commune.create(name: 'Tiltil', city_id: 4)
 
 #Commune.create(name: 'Maipu', city_id: 1)
 #Commune.create(name: 'Maipu', city_id: 1)
 #Commune.create(name: 'San Antonio", city_id: 2)
-# Commune.create(name: 'San Pedro", city_id: 3)
+#Commune.create(name: 'San Pedro", city_id: 3)
 
 
 # Genre.create(name: 'Femenino')
@@ -59,5 +59,17 @@ Commune.create(name: 'Tiltil', city_id: 4)
 # Service.create(name: 'Mesas Picnic')
 # Service.create(name: 'Almacen Interior')
 
+# Season.create(name: 'Alta', start_date: '2018-10-31', end_date: '2019-03-31')
+# Season.create(name: 'Baja', start_date: '2018-04-01', end_date: '2018-10-30')
 
+# Currency.create(iso: 'CLP', name: 'Peso Chileno')
+# Currency.create(iso: 'USD', name: 'Dollar Americano')
+
+# Paymentmethod.create(name: 'Tarjeta de Credito')
+# Paymentmethod.create(name: 'Efectivo')
+# Paymentmethod.create(name: 'Paypal')
+
+# Paymentstatus.create(name: 'Pagado')
+# Paymentstatus.create(name: 'Pendiente')
+# Paymentstatus.create(name: 'Cancelado')
 

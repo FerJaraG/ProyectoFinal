@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season: one
+  person_type: 1
+  camping: one
+  price: 1
+
+two:
+  season: two
+  person_type: 1
+  camping: two
+  price: 1
