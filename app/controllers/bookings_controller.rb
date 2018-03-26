@@ -24,9 +24,9 @@ class BookingsController < ApplicationController
         
         if booking.save
           if campsite.update(status: true)
-            redirect_to prepayment_camping_bookings_path(booking), notice: "Se ha reservado con exito"
+            redirect_to prepayment_camping_bookings_path, notice: "Se ha reservado con exito"
           else 
-            redirect_to prepayment_camping_bookings_path(booking), notice: "Hubo un error al actualizar el campsite"
+            redirect_to new_camping_booking_path, notice: "Hubo un error al actualizar el campsite"
           end
         else
           redirect_to new_camping_booking_path(@camping), alert: "Error al reservar camping"
