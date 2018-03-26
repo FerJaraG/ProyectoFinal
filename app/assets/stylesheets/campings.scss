@@ -19,7 +19,8 @@
 .navbar{
 	//background-color: rgba(0, 0, 0, 0.0);
 	font-family: "Montserrat", sans-serif;
-	background-color: white;
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 .form-box{
@@ -209,3 +210,6 @@ transition-timing-function: ease-out;
 }
 
 /*--------------------------*/
+.menu{
+  padding-top: 60px;
+}

@@ -11,5 +11,7 @@ class User < ApplicationRecord
   belongs_to :genre, optional: true
   has_many :campings
   mount_uploader :image, ImageUploader
+  has_many :bookings
+  has_many :reviews, through: :bookings
 end
 

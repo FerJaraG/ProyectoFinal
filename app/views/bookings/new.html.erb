@@ -1,0 +1,39 @@
+
+<%= render 'shared/menu' %>
+<main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+    <h1>Nueva Reserva</h1>
+    <div class="">
+        <%= form_with(model: [@camping, @booking,], local: true) do |f| %>
+
+            <div class="form-group">
+                <%= f.label :check_in %>
+                <%= f.date_field :check_in%>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :check_out %>
+                <%= f.date_field :check_out%>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :adults_quantity %>
+                <%= f.text_field :adults_quantity%>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :kids_quantity %>
+                <%= f.text_field :kids_quantity%>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :observations %>
+                <%= f.text_area :observations %>
+            </div>
+            
+            <div class="actions">
+                <%= f.submit %>
+            </div>
+        <% end %>
+    </div>
+
+</main>

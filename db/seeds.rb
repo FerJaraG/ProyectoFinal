@@ -69,7 +69,4 @@
 # Paymentmethod.create(name: 'Efectivo')
 # Paymentmethod.create(name: 'Paypal')
 
-# Paymentstatus.create(name: 'Pagado')
-# Paymentstatus.create(name: 'Pendiente')
-# Paymentstatus.create(name: 'Cancelado')
 

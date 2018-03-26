@@ -9,10 +9,10 @@ class CreateBookings < ActiveRecord::Migration[5.1]
       t.integer :adults_quantity
       t.integer :kids_quantity
       t.string :observations
+      t.integer :status, default: 0
       t.references :camping, foreign_key: true
       t.references :user, foreign_key: true
       t.references :campsite, foreign_key: true
-      t.references :paymentstatus, foreign_key: true
 
       t.timestamps
     end

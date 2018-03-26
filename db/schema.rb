@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325214723) do
+ActiveRecord::Schema.define(version: 20180325230901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,14 @@ ActiveRecord::Schema.define(version: 20180325214723) do
     t.integer "adults_quantity"
     t.integer "kids_quantity"
     t.string "observations"
+    t.integer "status", default: 0
     t.bigint "camping_id"
     t.bigint "user_id"
     t.bigint "campsite_id"
-    t.bigint "paymentstatus_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["camping_id"], name: "index_bookings_on_camping_id"
     t.index ["campsite_id"], name: "index_bookings_on_campsite_id"
-    t.index ["paymentstatus_id"], name: "index_bookings_on_paymentstatus_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 20180325214723) do
     t.bigint "camping_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: false
     t.index ["camping_id"], name: "index_campsites_on_camping_id"
   end
 
@@ -103,12 +103,6 @@ ActiveRecord::Schema.define(version: 20180325214723) do
   end
 
   create_table "paymentmethods", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "paymentstatuses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -197,7 +191,6 @@ ActiveRecord::Schema.define(version: 20180325214723) do
 
   add_foreign_key "bookings", "campings"
   add_foreign_key "bookings", "campsites"
-  add_foreign_key "bookings", "paymentstatuses"
   add_foreign_key "bookings", "users"
   add_foreign_key "campings", "communes"
   add_foreign_key "campings", "users"

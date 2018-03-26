@@ -9,6 +9,6 @@ class Camping < ApplicationRecord
   has_many :campsites
   has_and_belongs_to_many :services
   has_many :plans
-  has_many :bookings 
-  has_many :transactions through :bookings
+  has_many :bookings, through: :campsite
+  has_many :transactions, through: :bookings
 end

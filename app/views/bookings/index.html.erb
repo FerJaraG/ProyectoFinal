@@ -1,0 +1,17 @@
+<h1>Mis Reservas</h1>
+
+<table>
+	<tr>
+		<th>Inicio</th>
+		<th>Termino</th>
+        <th>ID</th>
+	</tr>
+		<% @bookings.each do |booking| %>
+		<tr>
+			<td><%= booking.check_in %> </td>
+			<td><%= booking.check_out %> </td>
+            <td><%= booking.id %> </td>
+		</tr>
+	<% end %>
+	
+</table>

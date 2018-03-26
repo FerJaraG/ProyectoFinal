@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
   resources :campings do  
       get :home, on: :collection
-      resources :campsites
+      resources :campsites 
       resources :campservices
       resources :plans
+      resources :bookings do
+        get :prepayment, on: :collection
+      end
   end
 
   devise_for :users, controllers: {
