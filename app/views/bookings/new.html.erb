@@ -29,6 +29,11 @@
                 <%= f.label :observations %>
                 <%= f.text_area :observations %>
             </div>
+
+            <div class="form-group">
+                <%= f.label :status, 'Paga Online?' %>
+                <%= f.check_box :status, {}, checked_value = "pagar", unchecked_value = "pendiente" %>
+            </div>
             
             <div class="actions">
                 <%= f.submit %>

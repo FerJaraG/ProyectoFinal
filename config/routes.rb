@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :campservices
       resources :plans
       resources :bookings do
-        get :prepayment, on: :collection
+        get :prepayment, on: :member
       end
   end
 

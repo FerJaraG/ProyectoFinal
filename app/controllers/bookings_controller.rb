@@ -13,23 +13,27 @@ class BookingsController < ApplicationController
   
     def create
         campsite = @camping.campsites.where(status: false).first
-        booking = Booking.new(booking_params)
-        booking.user = current_user
-        booking.camping = @camping
-        booking.campsite = campsite
-        values = booking.value_calc
-        booking.price_per_day = values[:adult] + values[:child]
-        booking.total_price = booking.price_per_day * ((booking.check_out - booking.check_in).to_i)
-        booking.booking_date = Date.today
+        if campsite != nil
+          booking = Booking.new(booking_params)
+          booking.user = current_user
+          booking.camping = @camping
+          booking.campsite = campsite
+          values = booking.value_calc
+          booking.price_per_day = values[:adult] + values[:child]
+          booking.total_price = booking.price_per_day * ((booking.check_out - booking.check_in).to_i)
+          booking.booking_date = Date.today
         
-        if booking.save
-          if campsite.update(status: true)
-            redirect_to prepayment_camping_bookings_path, notice: "Se ha reservado con exito"
-          else 
-            redirect_to new_camping_booking_path, notice: "Hubo un error al actualizar el campsite"
+          if booking.save
+            if campsite.update(status: true)
+              redirect_to prepayment_camping_booking_path(@camping,booking.id), notice: "Se ha reservado con exito"
+            else 
+              redirect_to new_camping_booking_path, notice: "Hubo un error al actualizar el campsite"
+            end
+          else
+            redirect_to new_camping_booking_path(@camping), alert: "Fecha no Disponible"
           end
         else
-          redirect_to new_camping_booking_path(@camping), alert: "Error al reservar camping"
+          redirect_to new_camping_booking_path, notice: "No hay sitio disponible"
         end
     end
 

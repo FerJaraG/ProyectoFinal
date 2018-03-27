@@ -4,7 +4,8 @@ class Booking < ApplicationRecord
   belongs_to :campsite
   has_one :review
   has_many :transactions
-  enum status: [:pendiente, :pagado]
+  enum status: [:pendiente, :pagar]
+  validate :booking_period_not_overlapped
 
   def value_calc
     values = {}
@@ -16,4 +17,15 @@ class Booking < ApplicationRecord
     values[:child] *= self.kids_quantity
     values
   end
+
+  private
+    def booking_period_not_overlapped
+      unless Booking.where(
+        '(check_in <= ? AND check_out >= ?) OR (check_in >= ? AND check_out <= ?)',
+        check_in, check_out,
+        check_in, check_out
+      ).empty?
+        errors.add(:check_in, 'Invalid period.')
+      end
+    end
 end
