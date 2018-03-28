@@ -1,4 +1,4 @@
 class City < ApplicationRecord
   belongs_to :region
-  has_many :communes 
+  has_many :communes, dependent: :destroy
 end

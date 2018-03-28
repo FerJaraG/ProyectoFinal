@@ -23,18 +23,23 @@
 		</div>
 
 		<div class="form-group">
-	      	<%= f.label :region %><br />
-			<%= f.select :region, options_for_select(@regions),{prompt: 'Seleccione region'}, {id: 'regions'}%>
+	      	<%= f.label :country %><br />
+			<%= f.select :country, @country.pluck(:name, :id), prompt: 'Seleccione Pais'%>
 	    </div><br>
 
 		<div class="form-group">
-	      <%= f.label :city_id%><br>
-	      <%= f.select :city_id, options_for_select(@cities),{prompt: 'Seleccione Ciudad'}, {id: 'cities'}%>
+	      <%= f.label :region %><br>
+	      <select id="regions"></select>
+	    </div><br>
+
+		<div class="form-group">
+	      <%= f.label :city %><br>
+	      <select id="cities"></select>
 	    </div><br>
 
 	    <div class="form-group">
-	      <%= f.label :commune_id%><br>
-	      <%= f.select :commune_id, options_for_select(@communes),{prompt: 'Seleccione Comuna'}, {id: 'communes'}%>
+	      <%= f.label :commune%><br>
+	      <select id="commune_id" name="camping[commune_id]"></select>
 	    </div><br>
 
 		<div class="form-group">
@@ -63,3 +68,32 @@
 	<% end %>
 </div>
 
+<script>
+
+	$('select[name="camping[country]"]').on('change', function(event){
+		$.ajax({
+			url: '<%= regions_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {country_id: $(this).val()}
+		})
+	})
+
+	$('#regions').on('change', function(event){
+		$.ajax({
+			url: '<%= cities_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {region_id: $(this).val()}
+		})
+	})
+
+	$('#cities').on('change', function(event){
+		$.ajax({
+			url: '<%= communes_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {city_id: $(this).val()}
+		})
+	});
+</script>

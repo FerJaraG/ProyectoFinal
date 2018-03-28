@@ -26,12 +26,17 @@
 # City.create(name: 'Maipo', region_id: 1)
 # City.create(name: 'Cordillera', region_id: 1)
 # City.create(name: 'Chacabuco', region_id: 1)
+# City.create(name: 'Chañaral', region_id: 3)
+#City.create(name: 'Copiapo', region_id: 3)
+# City.create(name: 'Huasco', region_id: 3)
 
+# Commune.create(name: 'Caldera', city_id: 11)
+# Commune.create(name: 'Copiapo', city_id: 11)
+# Commune.create(name: 'Tierra Amarilla', city_id: 11)
 # Commune.create(name: 'Colina', city_id: 4)
 # Commune.create(name: 'Lampa', city_id: 4)
 # Commune.create(name: 'Tiltil', city_id: 4)
 
-#Commune.create(name: 'Maipu', city_id: 1)
 #Commune.create(name: 'Maipu', city_id: 1)
 #Commune.create(name: 'San Antonio", city_id: 2)
 #Commune.create(name: 'San Pedro", city_id: 3)

@@ -15,10 +15,9 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
       
-  post 'campings/return_cities'
-
-  post 'campings/return_communes'
-  
+  get 'regions', to: 'regions#new'
+  get 'cities', to: 'cities#new'
+  get 'communes', to: 'communes#new'
 
   root 'campings#home'
 

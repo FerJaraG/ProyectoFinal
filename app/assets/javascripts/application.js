@@ -14,14 +14,25 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function(e){  
-	$('#regions').change(function(){
-		var region_id = $(this).find(":selected").val();
-		$.post("return_cities", {region_id: region_id});
-	});
+// $(document).on('turbolinks:load', function(e){  
+// 	$('#regions').on('change',(function(){
+// 		var region_id = $(this).find(":selected").val();
+// 		$.post("return_cities", {region_id: region_id});
+// 	});
 
-	$('#cities').change(function(){
-		var city_id = $(this).find(":selected").val();
-		$.post("return_communes", {city_id: city_id});
+// 	$('#cities').change(function(){
+// 		var city_id = $(this).find(":selected").val();
+// 		$.post("return_communes", {city_id: city_id});
+// 	})
+// })	
+
+$(document).on('turbolinks:load', function(e){ 
+	$('select[name="camping[country]"]').on('change', function(event){
+		$.ajax({
+			url: '<%= regions_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {country_id: $(this).val()}
+		})
 	})
-})	
+});

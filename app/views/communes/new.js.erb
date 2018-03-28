@@ -1,0 +1,4 @@
+$('#commune_id').html("");
+<% @communes.each do |commune| %>
+    $('#commune_id').append("<option value='<%= commune.id %>'><%= commune.name %></option>");
+<% end %>

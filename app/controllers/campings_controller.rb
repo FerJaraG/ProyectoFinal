@@ -11,10 +11,11 @@ class CampingsController < ApplicationController
   end
 
   def new
-  	@camping = Camping.new
-    @regions = Region.all.map{|s|[s.name, s.id]}
-    @cities = City.all.map{|s|[s.name, s.id]}
-    @communes = Commune.all.map{|s|[s.name, s.id]}
+    @camping = Camping.new
+    @country = Country.all
+    @region = Region.all
+    @cities = City.all
+    @communes = Commune.all
   end
 
   def create
@@ -23,7 +24,7 @@ class CampingsController < ApplicationController
     if camping.save
       redirect_to camping_path(camping), notice: 'Se creo camping con exito'
     else
-      redirect_to campings_new_path, notice: 'No se pudo crear camping :('
+      redirect_to new_camping_path, notice: 'No se pudo crear camping :('
     end
   end
 

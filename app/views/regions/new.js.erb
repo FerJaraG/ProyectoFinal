@@ -1,0 +1,4 @@
+$('#regions').html("");
+<% @regions.each do |region| %>
+    $('#regions').append("<option value='<%= region.id %>'><%= region.name %></option>");
+<%end%>
