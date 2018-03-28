@@ -14,6 +14,13 @@ Rails.application.routes.draw do
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
+
+  resources :billings, only: [] do
+    collection do
+      get 'pre_pay'
+      get 'execute'
+    end
+  end
       
   get 'regions', to: 'regions#new'
   get 'cities', to: 'cities#new'

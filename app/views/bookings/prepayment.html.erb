@@ -1,6 +1,64 @@
+<br>
+<br>
+
 <div class="container">
-    <h1>Datos reserva final</h1>
+    <h1>Datos de su Reserva:</h1>
     <table>
-       
+        <tr>
+            <td>
+                <label>Camping:</label>
+                <%=@booking.campsite.camping.name%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Sitio Numero:</label>
+                <%=@booking.campsite.identifier%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Check In:</label>
+                <%=@booking.check_in%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Check Out:</label>
+                <%=@booking.check_out%>
+             </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Precio por día:</label>
+                <%=@booking.price_per_day%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Precio Total:</label>
+                <%=@booking.total_price%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Cantidad Adultos:</label>
+                <%=@booking.adults_quantity%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Cantidad Niños:</label>
+                <%=@booking.kids_quantity%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Observaciones:</label>
+                <%=@booking.observations%>
+            </td>
+        </tr>
+        
     </table>
-</end>
+    <%= link_to 'Confirmar compra', pre_pay_billings_path, class: 'btn btn-success' %>
+</div>

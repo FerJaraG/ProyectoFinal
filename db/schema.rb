@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327180312) do
+ActiveRecord::Schema.define(version: 20180328150128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 20180327180312) do
   create_table "billings", force: :cascade do |t|
     t.string "code"
     t.string "payment_method"
-    t.decimal "amount", precision: 5, scale: 2
-    t.string "currency"
+    t.decimal "amount", precision: 10, scale: 2
+    t.bigint "currency_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["currency_id"], name: "index_billings_on_currency_id"
     t.index ["user_id"], name: "index_billings_on_user_id"
   end
 
@@ -41,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180327180312) do
     t.bigint "campsite_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "billing_id"
+    t.index ["billing_id"], name: "index_bookings_on_billing_id"
     t.index ["camping_id"], name: "index_bookings_on_camping_id"
     t.index ["campsite_id"], name: "index_bookings_on_campsite_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -161,18 +164,6 @@ ActiveRecord::Schema.define(version: 20180327180312) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transactions", force: :cascade do |t|
-    t.bigint "booking_id"
-    t.float "amount"
-    t.bigint "paymentmethod_id"
-    t.bigint "currency_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_transactions_on_booking_id"
-    t.index ["currency_id"], name: "index_transactions_on_currency_id"
-    t.index ["paymentmethod_id"], name: "index_transactions_on_paymentmethod_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -200,7 +191,9 @@ ActiveRecord::Schema.define(version: 20180327180312) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "billings", "currencies"
   add_foreign_key "billings", "users"
+  add_foreign_key "bookings", "billings"
   add_foreign_key "bookings", "campings"
   add_foreign_key "bookings", "campsites"
   add_foreign_key "bookings", "users"
@@ -213,9 +206,6 @@ ActiveRecord::Schema.define(version: 20180327180312) do
   add_foreign_key "plans", "seasons"
   add_foreign_key "regions", "countries"
   add_foreign_key "reviews", "bookings"
-  add_foreign_key "transactions", "bookings"
-  add_foreign_key "transactions", "currencies"
-  add_foreign_key "transactions", "paymentmethods"
   add_foreign_key "users", "communes"
   add_foreign_key "users", "genres"
 end

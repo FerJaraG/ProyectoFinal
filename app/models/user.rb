@@ -13,5 +13,9 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :bookings
   has_many :reviews, through: :bookings
+
+  def pay
+  	bookings.where(status: 'pagar')
+  end
 end
 

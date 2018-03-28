@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    before_action :set_booking, only: [:show, :edit, :update, :destroy]
+    before_action :set_booking, only: [:show, :edit, :update, :destroy,:prepayment]
     before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
     before_action :authenticate_user!
 
