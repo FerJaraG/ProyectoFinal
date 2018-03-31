@@ -24,6 +24,7 @@
 					<h2>Encuentra tu Camping</h2>
 				</div>
 			</div>
+
 			<div class="row">
 				<% @campings.each do |camping| %>
 					<div class="col-lg-4 col-md-4 col-sm-6">
@@ -34,7 +35,8 @@
 							<div class="fh5co-text">
 								<h2><%= camping.name %></h2>
 								<p><%= camping.description %></p>
-								<%= link_to 'Ver Camping', camping_path(camping), class: "btn btn-primary"%>
+								<%= link_to 'Ver Camping', camping_path(camping), class: "btn btn-dark"%>
+								<br><br>
 							</div>
 					</div>
 					<% end %>

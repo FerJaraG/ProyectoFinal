@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :plans
       resources :bookings do
         get :prepayment, on: :member
+        resources :reviews
       end
   end
 
