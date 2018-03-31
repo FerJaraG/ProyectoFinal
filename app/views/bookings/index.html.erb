@@ -28,14 +28,20 @@
 			</div>
 			<div class="row">
 				<% @bookings.each do |booking| %>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="fh5co-text">
-								<p><%= booking.check_in %></p>
-								<p><%= booking.check_out %></p>
-   								<%= link_to 'Editar',  edit_camping_booking_path(@camping,booking), class: "btn btn-primary btn-sm"%>
-
-							</div>
+					<div class="price-box popular">
+					<ul class="pricing-info">
+							<h4>Reserva: <%= booking.id %></h4>
+							<li>Check In: <%= booking.check_in %></li>
+							<li>Check Out: <%= booking.check_out %></li>
+							<li>Sitio: <%= booking.campsite.identifier %></li>
+							<li>Precio Total: <%= booking.total_price.to_i %></li>
+							<li>Estado Pago: <%= booking.status %></li>
+							<li>Observaciones: <%= booking.observations %></li><br>
+   							<%= link_to 'Editar',  edit_camping_booking_path(@camping,booking), class: "btn btn-primary btn-sm"%>
+					</ul>
 					</div>
+							
+			</div>
 					<% end %>
 			</div>
 		</div>

@@ -99,7 +99,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<ul class="fh5co-faq-list">
+					<ul class="price-box popular">
 						<% @reviews.each do |review| %>
 								<h4><%= review.title %>  <%= review.created_at.strftime("%d-%m-%Y--%H:%M:%S") %>:</h4>
 								<p><%= review.comment %></p>

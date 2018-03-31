@@ -31,7 +31,7 @@
 			<div class="row">
 				<% @plans.each do |plan| %>
 					<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="fh5co-text">
+							<div class="price-box popular">
 								<h3>Temporada <%= plan.season.name %></h3>
 								<p><%= if plan.person_type == 'adult' then 'Adulto' else 'Niño' end %>: <%= plan.price %></p>
 								<%= link_to 'Editar',  edit_camping_plan_path(@camping,plan), class: "btn btn-primary btn-sm"%>								
