@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :camping
   belongs_to :user
   belongs_to :campsite
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   belongs_to :billing, optional: true
   enum status: [:pendiente, :pagar, :pagado]
   validate :booking_period_not_overlapped

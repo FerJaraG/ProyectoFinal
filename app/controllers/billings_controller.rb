@@ -5,13 +5,15 @@ class BillingsController < ApplicationController
 		booking = current_user.pay
 		@currency = Currency.find(2).iso
 	#Cálculo del total.
-		@total = booking.pluck('total_price')[0]
+		response = HTTParty.get("http://www.mindicador.cl/api")
+		dolar = response['dolar']['valor'].to_f
+		@total = (booking.pluck('total_price')[0] / dolar).round(2)
 		#Generando array de hashes con los productos.
 		@bookings = booking.map do |book|
 				bookpay = {}
 				bookpay[:name] = "reserva#{book.id}"
 				bookpay[:sku] = book.id.to_s
-				bookpay[:price] = book.total_price
+				bookpay[:price] = @total
 				bookpay[:currency] = @currency
 				bookpay[:quantity] = 1
 				bookpay

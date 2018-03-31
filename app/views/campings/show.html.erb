@@ -103,6 +103,7 @@
 						<% @reviews.each do |review| %>
 								<h4><%= review.title %>  <%= review.created_at.strftime("%d-%m-%Y--%H:%M:%S") %>:</h4>
 								<p><%= review.comment %></p>
+								<p>Evaluación: <%= review.ranking %></p>
 						<% end %>
 					</ul>
 				</div>

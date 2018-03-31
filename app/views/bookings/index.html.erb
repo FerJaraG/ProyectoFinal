@@ -1,17 +1,45 @@
-<h1>Mis Reservas</h1>
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					<div class="row row-mt-15em">
 
-<table>
-	<tr>
-		<th>Inicio</th>
-		<th>Termino</th>
-        <th>ID</th>
-	</tr>
-		<% @bookings.each do |booking| %>
-		<tr>
-			<td><%= booking.check_in %> </td>
-			<td><%= booking.check_out %> </td>
-            <td><%= booking.id %> </td>
-		</tr>
-	<% end %>
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+								
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
 	
-</table>
+    <p><%= notice %></p>
+    <p><%= alert %></p>
+
+<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Reservas de tu Camping:</h2>
+				</div>
+			</div>
+			<div class="row">
+				<% @bookings.each do |booking| %>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="fh5co-text">
+								<p><%= booking.check_in %></p>
+								<p><%= booking.check_out %></p>
+   								<%= link_to 'Editar',  edit_camping_booking_path(@camping,booking), class: "btn btn-primary btn-sm"%>
+
+							</div>
+					</div>
+					<% end %>
+			</div>
+		</div>
+	</div>
+
+
+

@@ -65,8 +65,11 @@
 							<p><%=@booking.observations%></p>
 						</li>
                         <li class="animate-box">
-                            <%= link_to 'Pagar Online', pre_pay_billings_path, class: 'btn btn-primary btn-sm' %>
-                            <%= link_to 'Pagar en Camping', root_path, class: 'btn btn-primary btn-sm' %>
+							<%if @booking.status == 'pagar'%>
+                            	<%= link_to 'Pagar', pre_pay_billings_path, class: 'btn btn-primary btn-sm' %>
+							<% else %>
+                            	<%= link_to 'Salir', root_path, class: 'btn btn-primary btn-sm' %>
+							<% end %>
                         </li>
 					</ul>
 				</div>
