@@ -1,93 +1,186 @@
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
-<div class="row">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= devise_error_messages! %>
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					<div class="row row-mt-15em">
 
-     <div class="form-group">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, class: "form-control"%>
-    </div>
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+								
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+    <p><%= notice %></p>
+    <p><%= alert %></p>
+<div class="gtco-section border-bottom">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-6 animate-box">
+					<h3>Perfil Usuario</h3>
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
 
-    <div class="form-group">
-      <%= f.label :lastName %><br />
-      <%= f.text_field :lastName, class: "form-control"%>
-    </div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :name,'Nombre:' %>
+                <%= f.text_field :name, autofocus: true, class: "form-control"%>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :birthday %><br />
-      <%= f.date_field :birthday, class: "form-control"%>
-    </div>
+            <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :lastName, 'Apellido' %>
+                <%= f.text_field :lastName, class: "form-control"%>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :genre%><br>
-      <%= f.select :genre_id, options_for_select(Genre.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Genero'%>
-    </div>
+            <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :birthday %><br />
+                <%= f.date_field :birthday, class: "form-control"%>
+              </div>
+						</div>
 
-    <div class="form-group">
-        <%= f.label :country%><br>
-        <%= f.select :country, options_for_select(Country.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione País'%>
-      </div><br>
+            <div class="row form-group">
+							<div class="col-md-12">
+							<%= f.label :genre%><br>
+              <%= f.select :genre_id, options_for_select(Genre.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Genero'%>
+              </div>
+						</div>
 
-    <div class="form-group">
-        <%= f.label :region%><br>
-        <%= f.select :region, options_for_select(Region.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Región'%>
-      </div><br>
+             <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :address,'Dirección:' %>
+                <%= f.text_field :address, class: "form-control"%>
+              </div>
+						</div>
 
-    <div class="form-group">
-        <%= f.label :city%><br>
-        <%= f.select :city, options_for_select(City.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Ciudad'%>
-      </div><br>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :country,'País:' %><br>
+                <%= f.select :country, @country.pluck(:name, :id), prompt: 'Seleccione Pais', class: "form-control"%>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :commune%><br>
-      <%= f.select :commune_id, options_for_select(Commune.all.map{|s|[s.name, s.id]}), prompt: 'Seleccione Comuna'%>
-    </div><br>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :region,'Región:' %>
+                <select id="regions" class="form-control"></select>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :image %>
-      <%= f.file_field :image, id: :image_image, class: "form-control" %>
-   </div><br>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :city,'Ciudad:' %>
+                <select id="cities" class="form-control"></select>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :biography %><br />
-      <%= f.text_area :biography, class: "form-control"%>
-    </div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :commune,'Comuna:' %>
+                <select id="commune_id" name="user[commune_id]"></select>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
-    </div>
+            <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :image %>
+                <%= f.file_field :image, id: :image_image, class: "form-control" %>
+              </div>
+						</div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
+            <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :biography %><br />
+                <%= f.text_area :biography, class: "form-control"%>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
-      <% end %>
-    </div>
+            <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :email %><br />
+                <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+              </div>
+						</div>
 
-    <div class="form-group">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-    </div>
+             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Esperando que confirmes tu correo: <%= resource.unconfirmed_email %></div>
+            <% end %>
 
-    <div class="form-group">
-      <%= f.label :current_password, 'Contraseña actual' %> <i>(Ingrese su contraseña actual para actualizar su Perfil)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-    </div>
+						<div class="row form-group">
+							<div class="col-md-12">
+                  <%= f.label :password %> <i>(Dejar en blanco si no quieres cambiarla.)</i><br />
+                  <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                  <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %> caracteres minimo.</em>
+                  <% end %>
+              </div>
+						</div>
 
-    <div class="actions">
-      <%= f.submit "Update" %>
-    </div>
-  <% end %>
-</div><br>
-  <h3>Eliminar Cuenta</h3>
+            <div class="row form-group">
+							<div class="col-md-12">
+                  <%= f.label :password_confirmation, 'Repita Contraseña' %>
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              </div>
+						</div>
 
-  <p><%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <div class="row form-group">
+							<div class="col-md-12">
+                  <%= f.label :current_password, 'Contraseña actual' %> <i>(Ingrese su contraseña actual para actualizar su Perfil)</i><br />
+                  <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+              </div>
+						</div>
 
-<%= link_to "Back", :back %>
+						<div class="form-group">
+              <%= f.submit 'Guardar', class: "btn btn-primary"  %>
+						</div>
+
+					</form>	
+          <% end %>
+            <h4>Eliminar Cuenta</h4>
+            <p><%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "Estas Seguro? :(" }, method: :delete %></p>
+
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script>
+
+	$('select[name="user[country]"]').on('change', function(event){
+		$.ajax({
+			url: '<%= regions_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {country_id: $(this).val()}
+		})
+	})
+
+	$('#regions').on('change', function(event){
+		$.ajax({
+			url: '<%= cities_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {region_id: $(this).val()}
+		})
+	})
+
+	$('#cities').on('change', function(event){
+		$.ajax({
+			url: '<%= communes_path %>',
+			type: 'get',
+			dataType: 'script',
+			data: {city_id: $(this).val()}
+		})
+	});
+</script>

@@ -1,0 +1,68 @@
+<div class="gtco-section border-bottom">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-6 animate-box">
+					<h3>Completa el siguiente formulario para Reservar:</h3>
+					<%= form_with(model: [@camping, @booking,], local: true) do |f| %>
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :check_in, 'Desde:' %>
+                                <%= f.date_field :check_in, class: "form-control"%>
+							</div>
+							
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :check_out, 'Hasta:' %>
+                                <%= f.date_field :check_out, class: "form-control"%>
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :adults_quantity,'Cantidad Adultos:' %>
+                                <%= f.number_field :adults_quantity, class: "form-control"%>
+                            </div>
+						</div>
+
+                        <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :kids_quantity,'Cantidad Niños:' %>
+                                <%= f.number_field :kids_quantity, class: "form-control"%>
+                            </div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :observations, 'Observaciones:' %>
+                                <%= f.text_area :observations, class: "form-control", cols: "30", rows: "10", placeholder: "Puedes indicarnos algun detalle sobre tu estadía, como por ejemplo tu hora de llegada :)" %>
+                            </div>
+						</div>
+						<div class="form-group">
+                            <%= f.submit 'Reservar', class: "btn btn-primary"  %>
+						</div>
+
+					</form>	
+                    <% end %>	
+				</div>
+				<div class="col-md-5 col-md-push-1 animate-box">
+					
+					<div class="gtco-contact-info">
+						<h3>Información de Contacto</h3>
+						<ul>
+							<li>Dirección: <%= @camping.address %></li>
+							<li>Teléfono: <a href="<%= @camping.phone %>"> <%= @camping.phone %></a></li>
+							<li>Email: <a href="<%= @camping.email %>"> <%= @camping.email %></a></li>
+							<li>Web: <a href="<%= @camping.web %>"> <%= @camping.web %></a></li>
+                            <li>Facebook: <a href="<%= @camping.facebook %>"> Siguenos!</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>

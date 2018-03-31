@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  enum user_type: [:person, :camping]
+  enum user_type: [:person, :camping, :guest]
   belongs_to :commune, optional: true 
   belongs_to :city, optional: true 
   belongs_to :region, optional:true 

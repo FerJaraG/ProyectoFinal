@@ -1,20 +1,23 @@
 class PlansController < ApplicationController
 	before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
 	before_action :set_plan, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!
+	before_action :authenticate_user!	
+	include HTTParty
 
 	def index
-		@plans = Plan.all 
+		@plans = Plan.all
 	end
 
 	def new
 		@plan = Plan.new 
 		@seasons = Season.all.map{|s|[s.name, s.id]}
+		@plans = Plan.all
+
 	end
 
 	def create
 		plan = Plan.new(plan_params)
-		plan.camping_id = params[:camping_id]
+		plan.camping_id = @camping
 
     	if plan.save
       		redirect_to camping_plans_path, notice: 'Se creo plan con exito'
@@ -23,11 +26,9 @@ class PlansController < ApplicationController
     	end
 	end
 
-	def show
-
-	end
-
 	def edit
+		@plans = Plan.all
+		@seasons = Season.all.map{|s|[s.name, s.id]}
 	end
 
 	def update
@@ -47,7 +48,7 @@ class PlansController < ApplicationController
 
 	def set_plan
       @plan = Plan.find(params[:id])
-    end
+	end
 
     def set_camping
       @camping = Camping.find(params[:camping_id])

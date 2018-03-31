@@ -1,30 +1,45 @@
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					<div class="row row-mt-15em">
 
-<%= render 'shared/menu' %>
-<main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
-	<h1>New plan</h1>
-
-	<div class="">
-	<%= form_with(model: [@camping, @plan], local: true) do |f| %>
-
-		<div class="form-group">
-			<%= f.label :person_type %><br>
-            <%= f.select :person_type, Plan.person_types.keys  %>
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+								
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
 		</div>
+	</header>
+	
+    <p><%= notice %></p>
+    <p><%= alert %></p>
+	
+<%= render 'form'%>
 
-		<div class="form-group">
-			<%= f.label :season_id %><br>
-            <%= f.select :season_id, options_for_select(@seasons),{prompt: 'Seleccione Temporada'}, {id: 'season'}%>
+<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Planes de tu Camping:</h2>
+				</div>
+			</div>
+			<div class="row">
+				<% @plans.each do |plan| %>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="fh5co-text">
+								<h3>Temporada <%= plan.season.name %></h3>
+								<p><%= if plan.person_type == 'adult' then 'Adulto' else 'Niño' end %>: <%= plan.price %></p>
+								<%= link_to 'Editar',  edit_camping_plan_path(@camping,plan), class: "btn btn-primary btn-sm"%>								
+							</div>
+							<br>
+					</div>
+					<% end %>
+			</div>
 		</div>
+	</div>
 
-        <div class="form-group">
-            <%= f.label :price %><br />
-            <%= f.number_field :price, class: "form-control"%>
-        </div>
-
-	    <div class="actions">
-			<%= f.submit %>
-		</div>
-	<% end %>
-</div>
-
-</main>

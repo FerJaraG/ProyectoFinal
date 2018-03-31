@@ -1,194 +1,282 @@
-<header>
+<div class="gtco-loader"></div>
+	
+<div id="page">
+	
+	<header id="gtco-header" class="gtco-cover gtco-cover-md cover" role="banner" style="">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					
 
-	<div class="container-fluid form-box-container">
-		<div class="row">
-				<div class="col-md-6">
-				</div>
-				<div class="col-md-6 form-box">
-					<form>
-						<div class="form-group">
-							<label for="formGroupExampleInput">Destino</label>
-							<input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+					<div class="row row-mt-15em">
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Reencuentrate con la Naturaleza...</h1>	
 						</div>
-						<div class="form-group">
-							<label for="formGroupExampleInput2">Desde</label>
-							<input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-						</div>
-						<div class="form-group">
-							<label for="formGroupExampleInput2">Hasta</label>
-							<input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-						</div>
-					 	<button type="submit" class="btn btn-primary mb-2">Buscar</button>
-					</form>
-				</div>
-		</div>
-	</div>
-</header>
+						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+							<div class="form-wrap">
+								<div class="tab">
+									
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup">
+											<h3>Encuentra tu Camping</h3>
+											<form action="#">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="fullname">Destino</label>
+														<input type="text" id="fullname" class="form-control">
+													</div>
+												</div>
+												
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="date-start">Fecha Inicio</label>
+														<input type="text" id="date-start" class="form-control">
+													</div>
+												</div>
 
-<section id="regiones">
-	<div class="container-fluid flex-gallery">
-		<div class="row">
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'arica_y_parinacota.jpg', class: "region_img"%>
-					<figcaption>
-						<div>
-							<p>Region de Arica y Parinacota</p>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="date-start">Fecha Termino</label>
+														<input type="text" id="date-start" class="form-control">
+													</div>
+												</div>
+
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary btn-block" value="Buscar">
+													</div>
+												</div>
+											</form>	
+										</div>
+
+										
+									</div>
+								</div>
+							</div>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'tarapaca.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Tarapaca</p>
-						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'antofagasta.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Antofagasta</p>
-						</div>
-					</figcaption>
-				</figure>
+					</div>
+							
+					
+				</div>
 			</div>
 		</div>
-		<div class="row pt-10">
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'atacama.jpeg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Atacama</p>
-						</div>
-					</figcaption>
-				</figure>
+	</header>
+	
+	<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Destinos Populares</h2>
+					<p>Conoce las regiones más visitadas de Chile por nuestros Usuarios.</p>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'coquimbo.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Coquimbo</p>
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4 col-sm-6">
+				   <a href="#" class="fh5co-card-item image-popup">		
+						<figure>
+							<div class="overlay"></div>
+							<%= image_tag 'atacama.jpg', class: "img-responsive" %>
+						</figure>
+						<div class="fh5co-text">
+							<h2>Región de Atacama</h2>
+							<p>Famosa por su hermosa ciudad de San Pedro y el Desierto florido.</p>
+							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'valparaiso.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Valparaiso</p>
+					</a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="#" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"></div>
+							<%= image_tag 'magallanes.jpg', class: "img-responsive" %>
+						</figure>
+						<div class="fh5co-text">
+							<h2>Región de Magallanes</h2>
+							<p>Famosa por las hermosas Torres del Paine y sus Lagos.</p>
+							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'metropolitana.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region Metropolitana</p>
+					</a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="#" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"></div>
+							<%= image_tag 'loslagos.jpg', class: "img-responsive" %>
+						</figure>
+						<div class="fh5co-text">
+							<h2>Región de Los Lagos</h2>
+							<p>Famosa por sus bosques, hermosos lagos y montañas.</p>
+							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'ohiggins.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de O'Higgins</p>
+					</a>
+				</div>
+
+
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="#" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"></div>
+							<%= image_tag 'coquimbo.jpg', class: "img-responsive" %>
+						</figure>
+						<div class="fh5co-text">
+							<h2>Región de Coquimbo</h2>
+							<p>Famosa por el Valle del Elqui, su hermoso cielo y su Pisco.</p>
+							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'maule.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region del Maule</p>
+					</a>
+				</div>
+
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="#" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"></div>
+							<%= image_tag 'metropolitana.jpg', class: "img-responsive" %>
+						</figure>
+						<div class="fh5co-text">
+							<h2>Región Metropolitana</h2>
+							<p>Famosa por su cercanía a la Cordillera de los Andes.</p>
+							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'biobio.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region del Bio Bio</p>
+					</a>
+				</div>
+
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="#" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"></div>
+							<%= image_tag 'maule.jpg', class: "img-responsive" %>
+						</figure>
+						<div class="fh5co-text">
+							<h2>Región del Maule</h2>
+							<p>Famosa por el Parque de las Siete Tazas y sus viñas</p>
+							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'araucania.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de la Araucania</p>
-						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'losrios.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Los Rios</p>
-						</div>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'loslagos.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Los Lagos</p>
-						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'aysen.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Aysen</p>
-						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure>
-					<%= image_tag 'magallanes.jpg', class: "region_img" %>
-					<figcaption>
-						<div>
-							<p>Region de Magallanes</p>
-						</div>
-						</figcaption>
-				</figure>
+					</a>
+				</div>
+
 			</div>
 		</div>
 	</div>
 	
-</section>
+	<div id="gtco-features">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+					<h2>Nuestra Meta</h2>
+					<p>Fomentar el turismo de Campings dentro de Chile, para que más personas se conecten con nuestra hermosa Naturaleza.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i>1</i>
+						</span>
+						<h3>Conoce Chile!</h3>
+						<p>Planifica tus proximas vacaciones y reserva tu Camping en un click!</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i>2</i>
+						</span>
+						<h3>Inscribe tu Camping!</h3>
+						<p>Eres dueño de un Camping y te gustaría ser parte de nuestro sitio? Estas a un click de hacerlo!</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i>3</i>
+						</span>
+						<h3>Arrienda tu Patio!</h3>
+						<p>Tienes un patio enorme y te gustaría rentarlo? Estas en el sitio correcto! </p>
+					</div>
+				</div>
+				
 
+			</div>
+		</div>
+	</div>
 
+	<div id="gtco-counter" class="gtco-section">
+		<div class="gtco-container">
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+					<h2>Seguimos creciendo!</h2>
+					<p>Muchos chilenos ya han confiado en nosotros, unete! No esperes más :)</p>
+				</div>
+			</div>
+
+			<div class="row">
+				
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="196" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Destinos</span>
+
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="230" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Campings</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="3548" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Viajeros</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="3378" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Usuarios Felices :)</span>
+
+					</div>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div id="gtco-subscribe">
+		<div class="gtco-container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Suscribete a nuestro Sitio</h2>
+					<p>Conoce el mundo del Camping en Chile</p>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2">
+					<form class="form-inline">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<label for="email" class="sr-only">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.cl">
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<button type="submit" class="btn btn-default btn-block">Suscribir</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- </div> -->
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	

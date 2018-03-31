@@ -13,9 +13,6 @@ class CampingsController < ApplicationController
   def new
     @camping = Camping.new
     @country = Country.all
-    @region = Region.all
-    @cities = City.all
-    @communes = Commune.all
   end
 
   def create
@@ -29,14 +26,20 @@ class CampingsController < ApplicationController
   end
 
   def show
+    @plan_high_a = @camping.plans.find_by(season_id: 1, person_type: 'adult')
+    @plan_high_c = @camping.plans.find_by(season_id: 1, person_type: 'child')
+    @plan_low_a = @camping.plans.find_by(season_id: 2, person_type: 'adult')
+    @plan_low_c = @camping.plans.find_by(season_id: 2, person_type: 'child')
+    @services = @camping.services
   end
 
   def edit
+    @country = Country.all
   end
 
   def update
     if @camping.update(camping_params)
-      redirect_to @camping, notice: 'El sitio se ha actualizado con exito'
+      redirect_to camping_path(@camping), notice: 'El Camping se ha actualizado con exito'
     else
       redirect_to edit_camping_path(@camping.id), notice: 'No se ha podido actualizar el registro'
     end
@@ -44,7 +47,7 @@ class CampingsController < ApplicationController
 
   def destroy
     @camping.destroy
-    redirect_to root_path, notice: 'El registro se ha eliminado con exito'
+    redirect_to campings_path, notice: 'El registro se ha eliminado con exito'
   end
 
   def search
@@ -65,7 +68,7 @@ class CampingsController < ApplicationController
   end
   
   def camping_params
-    params.require(:camping).permit(:name,:description,:user_id,:camping_type,:commune_id,:address,:latitude,:longitude,:rules, {images: []}, service_ids:[])
+    params.require(:camping).permit(:name,:description,:user_id, :phone, :email,:web,:facebook, :tourism,:camping_type,:commune_id,:address,:latitude,:longitude,:rules, {images: []}, service_ids:[])
   end
   
 end

@@ -12,27 +12,20 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require modernizr-2.6.2.min
+//= require jquery.min
+//= require jquery.easing.1.3
+//= require bootstrap.min
+//= require jquery.waypoints.min
+//= require owl.carousel.min
+//= require jquery.countTo
+//= require jquery.stellar.min
+//= require jquery.magnific-popup.min
+//= require magnific-popup-options
+//= require bootstrap-datepicker.min
+//= require main
+//= require google_map
+//= require jquery.easypiechart.min
+//= require respond.min
 //= require_tree .
-
-// $(document).on('turbolinks:load', function(e){  
-// 	$('#regions').on('change',(function(){
-// 		var region_id = $(this).find(":selected").val();
-// 		$.post("return_cities", {region_id: region_id});
-// 	});
-
-// 	$('#cities').change(function(){
-// 		var city_id = $(this).find(":selected").val();
-// 		$.post("return_communes", {city_id: city_id});
-// 	})
-// })	
-
-$(document).on('turbolinks:load', function(e){ 
-	$('select[name="camping[country]"]').on('change', function(event){
-		$.ajax({
-			url: '<%= regions_path %>',
-			type: 'get',
-			dataType: 'script',
-			data: {country_id: $(this).val()}
-		})
-	})
-});
+	

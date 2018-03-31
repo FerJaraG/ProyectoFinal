@@ -15,9 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @country = Country.all
+    super
+  end
 
   # PUT /resource
   # def update
@@ -47,7 +48,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :lastName, :birthday, :genre_id, :commune_id, :biography, :image])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :lastName, :birthday, :genre_id, :commune_id, :biography, :image, :address])
   end
 
   # The path used after sign up.

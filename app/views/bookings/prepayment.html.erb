@@ -1,64 +1,76 @@
-<br>
-<br>
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="row row-mt-15em">
 
-<div class="container">
-    <h1>Datos de su Reserva:</h1>
-    <table>
-        <tr>
-            <td>
-                <label>Camping:</label>
-                <%=@booking.campsite.camping.name%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Sitio Numero:</label>
-                <%=@booking.campsite.identifier%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Check In:</label>
-                <%=@booking.check_in%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Check Out:</label>
-                <%=@booking.check_out%>
-             </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Precio por día:</label>
-                <%=@booking.price_per_day%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Precio Total:</label>
-                <%=@booking.total_price%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Cantidad Adultos:</label>
-                <%=@booking.adults_quantity%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Cantidad Niños:</label>
-                <%=@booking.kids_quantity%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Observaciones:</label>
-                <%=@booking.observations%>
-            </td>
-        </tr>
-        
-    </table>
-    <%= link_to 'Confirmar compra', pre_pay_billings_path, class: 'btn btn-success' %>
-</div>
+						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Felicitaciones has reservado con nosotros!</h1>	
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+    <p><%= notice %></p>
+    <p><%= alert %></p>
+	<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+                
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+					<h2>Datos Reserva: </h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<ul class="fh5co-faq-list">
+						<li class="animate-box">
+                            <h4>Camping:</h4>
+							<p><%=@booking.campsite.camping.name%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Sitio:</h4>
+							<p><%=@booking.campsite.identifier%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Desde:</h4>
+							<p><%=@booking.check_in%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Hasta:</h4>
+							<p><%=@booking.check_out%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Precio por Día:</h4>
+							<p><%=@booking.price_per_day%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Precio Total:</h4>
+							<p><%=@booking.total_price%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Cantidad Adultos:</h4>
+							<p><%=@booking.adults_quantity%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Cantidad Niños:</h4>
+							<p><%=@booking.kids_quantity%></p>
+						</li>
+                        <li class="animate-box">
+                            <h4>Observaciones:</h4>
+							<p><%=@booking.observations%></p>
+						</li>
+                        <li class="animate-box">
+                            <%= link_to 'Pagar Online', pre_pay_billings_path, class: 'btn btn-primary btn-sm' %>
+                            <%= link_to 'Pagar en Camping', root_path, class: 'btn btn-primary btn-sm' %>
+                        </li>
+					</ul>
+				</div>
+			</div>
+            
+		</div>
+	</div>

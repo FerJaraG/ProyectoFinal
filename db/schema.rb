@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328150128) do
+ActiveRecord::Schema.define(version: 20180331012812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,11 @@ ActiveRecord::Schema.define(version: 20180328150128) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "images"
+    t.string "phone"
+    t.string "email"
+    t.string "tourism"
+    t.string "web"
+    t.string "facebook"
     t.index ["commune_id"], name: "index_campings_on_commune_id"
     t.index ["user_id"], name: "index_campings_on_user_id"
   end
@@ -185,6 +190,7 @@ ActiveRecord::Schema.define(version: 20180328150128) do
     t.bigint "commune_id"
     t.string "biography"
     t.string "image"
+    t.string "address"
     t.index ["commune_id"], name: "index_users_on_commune_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["genre_id"], name: "index_users_on_genre_id"

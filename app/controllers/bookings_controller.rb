@@ -27,13 +27,13 @@ class BookingsController < ApplicationController
             if campsite.update(status: true)
               redirect_to prepayment_camping_booking_path(@camping,booking.id), notice: "Se ha reservado con exito"
             else 
-              redirect_to new_camping_booking_path, notice: "Hubo un error al actualizar el campsite"
+              redirect_to new_camping_booking_path(@camping), notice: "Hubo un error al actualizar el campsite"
             end
           else
             redirect_to new_camping_booking_path(@camping), alert: "Fecha no Disponible"
           end
         else
-          redirect_to new_camping_booking_path, notice: "No hay sitio disponible"
+          redirect_to new_camping_booking_path(@camping), notice: "No hay sitio disponible"
         end
     end
 
@@ -49,15 +49,15 @@ class BookingsController < ApplicationController
   
     def update
       if @booking.update(booking_params)
-        redirect_to @booking, notice: 'La reserva se ha actualizado con exito'
+        redirect_to edit_booking_path(@camping, @booking.id), notice: 'La reserva se ha actualizado con exito'
       else
-        redirect_to edit_booking_path(@booking.id), notice: 'No se ha podido actualizar el registro'
+        redirect_to edit_booking_path(@camping, @booking.id), notice: 'No se ha podido actualizar el registro'
       end
     end
   
     def destroy
       @booking.destroy
-      redirect_to root_path, notice: 'El registro se ha eliminado con exito'
+      redirect_to campings_path, notice: 'El registro se ha eliminado con exito'
     end
   
     def search
