@@ -31,6 +31,7 @@ class CampingsController < ApplicationController
     @plan_low_a = @camping.plans.find_by(season_id: 2, person_type: 'adult')
     @plan_low_c = @camping.plans.find_by(season_id: 2, person_type: 'child')
     @services = @camping.services
+    @reviews = Review.where(booking_id: Booking.where(campsite_id: Campsite.where(camping_id: @camping)))
   end
 
   def edit
