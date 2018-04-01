@@ -7,15 +7,24 @@
 					<div id="gtco-logo"><a href="<%= root_path %>">ChileCamp<em>.</em></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
-					<ul>
-						<li><a href="<%= new_user_session_path %>">Iniciar Sesión</a></li>
-						<li><a href="<%= new_user_registration_path %>">Registrarse</a></li>
-					<% if user_signed_in? %>
+					<ul>	
+					<% if user_signed_in? && current_user.user_type == 'person'%>
+						<li><a href="#">Tipo: <%= current_user.user_type %></a></li>
 						<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
 						<li><a href="<%= edit_user_registration_path %>">Perfil Usuario</a></li>
-						<li><a href="<%= campings_path %>">Camping</a></li>
+						<li><a href="<%= user_user_bookings_path(current_user) %>">Mis Reservas</a></li>
+						<li><a href="<%= campings_path %>">Encuentra tu Camping</a></li>
+					<% elsif user_signed_in? && current_user.user_type == 'camping'%>
+						<li><a href="#">Tipo: <%= current_user.user_type %></a></li>
+						<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
+						<li><a href="<%= my_campings_campings_path %>">Mis Campings</a></li>
+						<li><a href="<%= new_camping_path %>">Crea tu Camping</a></li>
+					<% else %>
+						<li><a href="<%= new_user_session_path %>">Iniciar Sesión</a></li>
+						<li><a href="<%= new_user_registration_path %>">Registrarse</a></li>
+					<% end %>
 					</ul>
-				<% end %>	
+					
 				</div>
 			</div>
 			

@@ -6,8 +6,7 @@
 					<div class="row row-mt-15em">
 
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-							<span class="intro-text-small">Reserva con nosotros</span>
-							<h1>Ya casi estas listo!</h1>	
+								
 						</div>
 						
 					</div>
@@ -20,4 +19,72 @@
     <p><%= notice %></p>
     <p><%= alert %></p>
 	
-	<%= render 'form'%>
+	<div class="gtco-section border-bottom">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-6 animate-box">
+					<h3>Datos Reserva:</h3>
+					<h4>Recuerda que si te pagaron en efectivo en tu Camping debes marcar el cuadro 'Pagado' para que guardemos el registro.</h4>
+					<%= form_with(model: [@camping, @booking,], local: true) do |f| %>
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :check_in, 'Desde:' %>
+                                <%= f.date_field :check_in, class: "form-control"%>
+							</div>
+							
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12"><h3>Datos Reserva:</h3>
+                                <%= f.label :check_out, 'Hasta:' %>
+                                <%= f.date_field :check_out, class: "form-control"%>
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :adults_quantity,'Cantidad Adultos:' %>
+                                <%= f.number_field :adults_quantity, class: "form-control"%>
+                            </div>
+						</div>
+
+                        <div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :kids_quantity,'Cantidad Niños:' %>
+                                <%= f.number_field :kids_quantity, class: "form-control"%>
+                            </div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :observations, 'Observaciones:' %>
+                                <%= f.text_area :observations, class: "form-control", cols: "30", rows: "10", placeholder: "Puedes indicarnos algun detalle sobre tu estadía, como por ejemplo tu hora de llegada :)" %>
+                            </div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :total_price, 'Precio Total:' %>
+                                <%= f.text_field :total_price, class: "form-control", cols: "30", rows: "10", placeholder: "Puedes indicarnos algun detalle sobre tu estadía, como por ejemplo tu hora de llegada :)" %>
+                            </div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+                                <%= f.label :status, 'Pagado' %>
+                               <%= f.check_box :status, {}, checked_value = "pagado", unchecked_value = "pendiente" %>
+                            </div>
+						</div>
+
+						<div class="form-group">
+                            <%= f.submit 'Actualizar', class: "btn btn-primary"  %>
+						</div>
+
+					</form>	
+                    <% end %>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

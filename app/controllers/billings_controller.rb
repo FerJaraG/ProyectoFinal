@@ -65,7 +65,7 @@ class BillingsController < ApplicationController
 			booking = current_user.pay
 			booking.update_all(status: 'pagado', billing_id: billing.id)
 
-			redirect_to root_path, notice: "La compra se realizó con éxito!"
+			redirect_to campings_path, notice: "El pago se realizó con éxito!"
 		else
 				render plain: ":("
 		end

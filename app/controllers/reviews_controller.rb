@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
     before_action :set_booking, only: [:index,:create,:edit, :update,:show,:new]
     before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
 	before_action :set_review, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!
 
 	def index
 		@reviews = Review.all
@@ -16,8 +15,8 @@ class ReviewsController < ApplicationController
 		review = Review.new(review_params)
 		review.booking_id = @booking.id
 
-    	if review.save
-      		redirect_to new_camping_booking_review_path, notice: 'Se creo comentario con exito'
+		if review.save
+      		redirect_to campings_path, notice: 'Se creo comentario con exito'
     	else
       		redirect_to new_camping_booking_review_path, notice: 'No se pudo crear comentario :('
     	end

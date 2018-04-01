@@ -23,26 +23,29 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Planes de tu Camping:</h2>
+					<h2>Mis Reservas</h2>
 				</div>
 			</div>
 			<div class="row">
-				<%if @plans.empty?%>
-					<h4>Aun no tienes planes creados.</h4>
-				<%else%>	
-					<% @plans.each do |plan| %>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-								<div class="price-box popular">
-									<h3>Temporada <%= plan.season.name %></h3>
-									<p><%= if plan.person_type == 'adult' then 'Adulto' else 'Niño' end %>: <%= plan.price %></p>
-									<%= link_to 'Editar',  edit_camping_plan_path(@camping,plan), class: "btn btn-primary btn-sm"%>								
-								</div>
-								<br>
-						</div>
-					<% end %>
-				<%end%>
+				<% @user_bookings.each do |booking| %>
+					<div class="price-box popular">
+					<ul class="pricing-info">
+							<h4>Reserva: <%= booking.id %></h4>
+							<li>Check In: <%= booking.check_in %></li>
+							<li>Check Out: <%= booking.check_out %></li>
+							<li>Sitio: <%= booking.campsite.identifier %></li>
+							<li>Precio Total: <%= booking.total_price.to_i %></li>
+							<li>Estado Pago: <%= booking.status %></li>
+							<li>Observaciones: <%= booking.observations %></li><br>
+   							<%= link_to 'Escribir Review',  new_camping_booking_review_path(booking.camping_id,booking), class: "btn btn-primary btn-sm"%>
+					</ul>
+					</div>
+							
 			</div>
-			<%= link_to 'Crear Plan',  new_camping_plan_path(@camping), class: "btn btn-primary btn-sm"%>
+					<% end %>
+			</div>
 		</div>
 	</div>
+
+
 

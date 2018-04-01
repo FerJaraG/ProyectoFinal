@@ -1,9 +1,12 @@
 class CampingsController < ApplicationController
-  before_action :set_camping, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:home]
+  before_action :set_camping, only: [:show, :edit, :update, :destroy,:admin_camp]
 
   def index
   	@campings = Camping.all
+  end
+
+  def my_campings
+      @campings = Camping.where(user_id: current_user)
   end
 
   def home
@@ -26,10 +29,8 @@ class CampingsController < ApplicationController
   end
 
   def show
-    @plan_high_a = @camping.plans.find_by(season_id: 1, person_type: 'adult')
-    @plan_high_c = @camping.plans.find_by(season_id: 1, person_type: 'child')
-    @plan_low_a = @camping.plans.find_by(season_id: 2, person_type: 'adult')
-    @plan_low_c = @camping.plans.find_by(season_id: 2, person_type: 'child')
+    @plans_high = @camping.plans.where(season_id: 1).pluck(:person_type,:price)
+    @plans_low = @camping.plans.where(season_id: 2).pluck(:person_type,:price)
     @services = @camping.services
     @reviews = Review.where(booking_id: Booking.where(campsite_id: Campsite.where(camping_id: @camping)))
   end
@@ -51,7 +52,8 @@ class CampingsController < ApplicationController
     redirect_to campings_path, notice: 'El registro se ha eliminado con exito'
   end
 
-  def search
+  def admin_camp
+    
   end
   
   def return_cities

@@ -1,10 +1,9 @@
 class CampsitesController < ApplicationController
 	before_action :set_campsite, only: [:show, :edit, :update, :destroy]
 	before_action :set_camping, only: [:index, :edit, :update, :show, :new, :create]
-	before_action :authenticate_user!
 
 	def index
-		@campsites = Campsite.all
+		@campsites = Campsite.where(camping_id: @camping)
 	end
 
 	def new
@@ -17,7 +16,7 @@ class CampsitesController < ApplicationController
     	campsite.camping_id = params[:camping_id]
 
     	if campsite.save
-      		redirect_to new_camping_campsite_path, notice: 'Se creo sitio con exito'
+      		redirect_to camping_campsites_path, notice: 'Se creo sitio con exito'
     	else
       		redirect_to new_camping_campsite_path, notice: 'No se pudo crear sitio :('
     	end
@@ -29,7 +28,7 @@ class CampsitesController < ApplicationController
 
 	def update
 		if @campsite.update(campsite_params)
-			redirect_to edit_camping_campsite_path(@camping, @campsite.id), notice: 'El sitio se ha actualizado con exito'
+			redirect_to camping_campsites_path, notice: 'El sitio se ha actualizado con exito'
 		else
 			redirect_to edit_camping_campsite_path(@camping, @campsite.id), notice: 'No se ha podido actualizar el registro'
 		end

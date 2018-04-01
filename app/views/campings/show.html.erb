@@ -35,12 +35,19 @@
 						<hr>
 						<ul class="pricing-info">
 							<h4>Temporada Alta: </h4>
-							<li>Adulto: <%= @plan_high_a.price %></li>
-							<li>Niño: <%= @plan_high_c.price %></li>
-							<br>
+							<%if @plans_high == []%>
+								<li>No hay precios asociados a temporada alta aun :(</li><br>
+							<%else%>
+								<li>Adulto: <%= @plans_high[1][1] %></li>
+								<li>Niño: <%= @plans_high[0][1] %></li><br>
+							<%end%>
 							<h4>Temporada Baja: </h4>
-							<li>Adulto: <%= @plan_low_a.price %></li>
-							<li>Niño: <%= @plan_low_c.price %></li>
+							<%if @plans_low == []%>
+								<li>No hay precios asociados a temporada baja aun :(</li>
+							<%else%>
+								<li>Adulto: <%= @plans_low[1][1] %></li>
+								<li>Niño: <%= @plans_low[0][1] %></li>
+							<%end%>
 						</ul>
 						<%= link_to 'Reserva Ahora!', new_camping_booking_path(@camping), class: "btn btn-primary btn-sm"%>
 					</div>
@@ -50,9 +57,13 @@
 						<h2 class="pricing-plan">Servicios</h2>
 						<hr>
 						<ul class="pricing-info">
-							<% @services.each do |servicio| %>
-								<li><%= servicio.name %></li>
-							<% end %>
+						<%if @services.empty?%>
+								<p>No hay descripción de servicios aun.</p>
+							<%else%>
+								<% @services.each do |servicio| %>
+									<li><%= servicio.name %></li>
+								<% end %>
+							<%end%>
 						</ul>
 						<%= link_to 'Reserva Ahora!', new_camping_booking_path(@camping), class: "btn btn-primary btn-sm"%>
 					</div>
@@ -62,7 +73,11 @@
 						<h2 class="pricing-plan">Turismo:</h2>
 						<hr>
 						<ul class="pricing-info">
-							<li><%= @camping.tourism %></li>
+							<%if @camping.tourism.empty?%>
+								<p>No hay sugerencias de turismo en la zona aun</p>
+							<%else%>
+								<li><%= @camping.tourism %></li>
+							<%end%>
 						</ul>
 						<%= link_to 'Reserva Ahora!', new_camping_booking_path(@camping), class: "btn btn-primary btn-sm"%>
 					</div>
@@ -82,7 +97,11 @@
 				<div class="col-md-8 col-md-offset-2">
 					<ul class="fh5co-faq-list">
 						<li class="animate-box">
+						<%if @camping.rules.empty?%>
+							<p>No hay reglas asociadas al Camping aun</p>
+						<%else%>
 							<p><%= @camping.rules %></p>
+						<%end%>
 						</li>
 					</ul>
 				</div>
@@ -100,11 +119,15 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<ul class="price-box popular">
-						<% @reviews.each do |review| %>
-								<h4><%= review.title %>  <%= review.created_at.strftime("%d-%m-%Y--%H:%M:%S") %>:</h4>
-								<p><%= review.comment %></p>
-								<p>Evaluación: <%= review.ranking %></p>
-						<% end %>
+						<%if @reviews.empty?%>
+							<p>No hay opiniones asociadas al Camping aun</p>
+						<%else%>
+							<% @reviews.each do |review| %>
+									<h4><%= review.title %>  <%= review.created_at.strftime("%d-%m-%Y--%H:%M:%S") %>:</h4>
+									<p><%= review.comment %></p>
+									<p>Evaluación: <%= review.ranking %></p>
+							<% end %>
+						<%end%>
 					</ul>
 				</div>
 			</div>

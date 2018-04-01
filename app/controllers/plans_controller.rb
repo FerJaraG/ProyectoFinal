@@ -1,10 +1,9 @@
 class PlansController < ApplicationController
 	before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
 	before_action :set_plan, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!
 
 	def index
-		@plans = Plan.all
+		@plans = Plan.where(camping_id: @camping)
 	end
 
 	def new
@@ -16,9 +15,9 @@ class PlansController < ApplicationController
 
 	def create
 		plan = Plan.new(plan_params)
-		plan.camping_id = @camping
+		plan.camping_id = params[:camping_id]
 
-    	if plan.save
+		if plan.save
       		redirect_to camping_plans_path, notice: 'Se creo plan con exito'
     	else
       		redirect_to new_camping_plan_path, notice: 'No se pudo crear plan :('

@@ -27,22 +27,27 @@
 				</div>
 			</div>
 			<div class="row">
-				<% @campsites.each do |campsite| %>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="price-box popular">
-								<h3><%= campsite.identifier %></h3>
-								<p><%= campsite.description %></p>
-								<% if campsite.status == true%>
-									<p>Estado: Ocupado</p>
-								<%else%>
-									<p>Estado: Disponible</p>
-								<%end%>
-   								<%= link_to 'Editar',  edit_camping_campsite_path(@camping,campsite), class: "btn btn-primary btn-sm"%>
+				<%if @campsites.empty?%>
+					<h4>Aun no tienes sitios creados.</h4>
+				<%else%>
+					<% @campsites.each do |campsite| %>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+								<div class="price-box popular">
+									<h3><%= campsite.identifier %></h3>
+									<p><%= campsite.description %></p>
+									<% if campsite.status == true%>
+										<p>Estado: Ocupado</p>
+									<%else%>
+										<p>Estado: Disponible</p>
+									<%end%>
+									<%= link_to 'Editar',  edit_camping_campsite_path(@camping,campsite), class: "btn btn-primary btn-sm"%>
 
-							</div>
-					</div>
+								</div>
+						</div>
 					<% end %>
+				<% end %>
 			</div>
+			<%= link_to 'Crear Sitio',  new_camping_campsite_path(@camping), class: "btn btn-primary btn-sm"%>
 		</div>
 	</div>
 

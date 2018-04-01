@@ -54,6 +54,13 @@
               </div>
 						</div>
 
+						<div class="row form-group">
+							<div class="col-md-12">
+								<%= f.label :phone,'Dirección:' %>
+                <%= f.text_field :phone, class: "form-control"%>
+              </div>
+						</div>
+
              <div class="row form-group">
 							<div class="col-md-12">
 								<%= f.label :address,'Dirección:' %>
@@ -147,12 +154,18 @@
           <% end %>
             <h4>Eliminar Cuenta</h4>
             <p><%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "Estas Seguro? :(" }, method: :delete %></p>
-
 				</div>
+					<div class="col-md-5 col-md-push-1 animate-box">
+						<div class="gtco-contact-info">
+							<%= image_tag(@user.image.url, alt: 'profile image') if @user.image? %>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 
 
 <script>

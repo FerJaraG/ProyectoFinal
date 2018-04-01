@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331023358) do
+ActiveRecord::Schema.define(version: 20180401171235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20180331023358) do
     t.integer "camping_type"
     t.bigint "commune_id"
     t.string "address"
-    t.string "latitude"
-    t.string "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.string "rules"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -192,6 +192,9 @@ ActiveRecord::Schema.define(version: 20180331023358) do
     t.string "biography"
     t.string "image"
     t.string "address"
+    t.string "phone"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["commune_id"], name: "index_users_on_commune_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["genre_id"], name: "index_users_on_genre_id"

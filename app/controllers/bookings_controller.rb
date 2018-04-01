@@ -1,10 +1,13 @@
 class BookingsController < ApplicationController
     before_action :set_booking, only: [:show, :edit, :update, :destroy,:prepayment]
     before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
-    before_action :authenticate_user!
 
     def index
-        @bookings = Booking.all
+        @bookings = Booking.where(camping_id: @camping)
+    end
+
+    def user_bookings
+      @user_bookings = Booking.where(user_id: current_user)
     end
   
     def new
@@ -27,7 +30,7 @@ class BookingsController < ApplicationController
             if campsite.update(status: true)
               redirect_to prepayment_camping_booking_path(@camping,booking.id), notice: "Se ha reservado con exito"
             else 
-              redirect_to new_camping_booking_path(@camping), notice: "Hubo un error al actualizar el campsite"
+              redirect_to new_camping_booking_path(@camping), notice: "Hubo un error al actualizar el Sitio"
             end
           else
             redirect_to new_camping_booking_path(@camping), alert: "Fecha no Disponible"
