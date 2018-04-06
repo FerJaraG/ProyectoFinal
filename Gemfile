@@ -36,6 +36,8 @@ gem 'paypal-sdk-rest'
 gem 'httparty'
 gem 'cancancan'
 gem 'faker'
+gem 'geocoder'
+GEM 'gmaps4rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

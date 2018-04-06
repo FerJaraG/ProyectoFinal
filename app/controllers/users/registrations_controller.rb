@@ -21,9 +21,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @country = Country.all
+    super
+  end
+
+  def find_address
+    response = { address: Geocoder.address([params[:latitude], params[:longitude]]) }
+    render json: response.to_json
+  end
 
   # DELETE /resource
   # def destroy

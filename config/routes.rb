@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get :home, on: :collection
       get :my_campings, on: :collection
       get :admin_camp, on: :member
+      get :find_address, on: :collection
       resources :campsites
       resources :campservices
       resources :plans
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do 
     get 'user_bookings', to: 'bookings#user_bookings'
+    get :find_address, on: :collection
   end
 
   resources :billings, only: [] do

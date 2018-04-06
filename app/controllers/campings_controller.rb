@@ -70,6 +70,11 @@ class CampingsController < ApplicationController
   def admin_camp
     
   end
+
+  def find_address
+    response = { address: Geocoder.address([params[:latitude], params[:longitude]]) }
+    render json: response.to_json
+  end
   
   def return_cities
     @cities = City.where(region_id: params[:region_id])

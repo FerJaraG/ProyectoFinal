@@ -11,4 +11,6 @@ class Camping < ApplicationRecord
   has_many :plans
   has_many :bookings, through: :campsites
   has_many :transactions, through: :bookings
+  geocoded_by :address
+  after_validation :geocode
 end

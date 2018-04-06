@@ -13,6 +13,8 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :bookings
   has_many :reviews, through: :bookings
+  geocoded_by :address
+  after_validation :geocode
 
   def pay
   	bookings.where(status: 'pagar')
