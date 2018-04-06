@@ -286,7 +286,7 @@
 
 
 	
-	$(function(){
+	$(document).on('turbolinks:load', function() {
 		mobileMenuOutsideClick();
 		formTab();
 		offcanvasMenu();
@@ -299,7 +299,7 @@
 		counterWayPoint();
 		dateForm();
 		parallax();
-	});
+	})
 
 
 }());

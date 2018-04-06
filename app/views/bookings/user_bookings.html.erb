@@ -21,31 +21,31 @@
 
 <div class="gtco-section">
 		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Mis Reservas</h2>
-				</div>
-			</div>
-			<div class="row">
-				<% @user_bookings.each do |booking| %>
-					<div class="price-box popular">
-					<ul class="pricing-info">
-							<h4>Reserva: <%= booking.id %></h4>
-							<li>Check In: <%= booking.check_in %></li>
-							<li>Check Out: <%= booking.check_out %></li>
-							<li>Sitio: <%= booking.campsite.identifier %></li>
-							<li>Precio Total: <%= booking.total_price.to_i %></li>
-							<li>Estado Pago: <%= booking.status %></li>
-							<li>Observaciones: <%= booking.observations %></li><br>
-   							<%= link_to 'Escribir Review',  new_camping_booking_review_path(booking.camping_id,booking), class: "btn btn-primary btn-sm"%>
-					</ul>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<h2>Mis Reservas</h2>
 					</div>
-							
-			</div>
-					<% end %>
-			</div>
+				</div>
+				<div class="row">
+					<% @user_bookings.each do |booking| %>
+						<div class="price-box popular">
+							<ul class="pricing-info">
+									<h4>Reserva: <%= booking.id %></h4>
+									<li>Check In: <%= booking.check_in %></li>
+									<li>Check Out: <%= booking.check_out %></li>
+									<li>Sitio: <%= booking.campsite.identifier %></li>
+									<li>Precio Total: <%= booking.total_price.to_i %></li>
+									<li>Estado Pago: <%= booking.status %></li>
+									<li>Observaciones: <%= booking.observations %></li><br>
+									<%= link_to 'Escribir Review',  new_camping_booking_review_path(booking.camping_id,booking), class: "btn btn-primary btn-sm"%>
+							</ul>
+						</div>
+					<% end %>		
+				</div>
+					
 		</div>
-	</div>
+</div>
+
 
 
 

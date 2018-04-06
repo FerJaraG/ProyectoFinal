@@ -90,17 +90,17 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>Reglas del Camping</h2>
+					<h2>Información adicional:</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<ul class="fh5co-faq-list">
 						<li class="animate-box">
-						<%if @camping.rules.empty?%>
-							<p>No hay reglas asociadas al Camping aun</p>
+						<%if @camping.info.empty?%>
+							<p>No hay información adicional</p>
 						<%else%>
-							<p><%= @camping.rules %></p>
+							<p><%= @camping.info %></p>
 						<%end%>
 						</li>
 					</ul>

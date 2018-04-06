@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
 	before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
 	before_action :set_plan, only: [:show, :edit, :update, :destroy]
+	authorize_resource
 
 	def index
 		@plans = Plan.where(camping_id: @camping)

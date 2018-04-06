@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   // MagnificPopup
 	var magnifPopup = function() {
 		$('.image-popup').magnificPopup({

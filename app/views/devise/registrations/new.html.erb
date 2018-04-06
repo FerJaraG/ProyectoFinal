@@ -55,7 +55,11 @@
             <div class="row form-group">
 							<div class="col-md-12">
                   <%= f.label :user_type, 'Tipo de Usuario' %>
-                  <%= f.select :user_type, User.user_types.keys, class: "form-control"  %>
+				  <% roles_array = User.user_types.keys.map { |type| [type.capitalize, type] } %>
+				  <% roles_array.delete(['Guest', 'guest']) %>
+				  <%= f.select :user_type, roles_array, class: "form-control"  %>
+
+				   
               </div>
 						</div>
 

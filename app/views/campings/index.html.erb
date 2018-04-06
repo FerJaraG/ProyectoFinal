@@ -33,8 +33,16 @@
 								<%= image_tag 'magallanes.jpg', class: "img-responsive" %>
 							</figure>
 							<div class="fh5co-text">
-								<h2><%= camping.name %></h2>
-								<p><%= camping.description %></p>
+								<h3><%= camping.name %></h3>
+								<p>Sitios Disponibles: <%= camping.campsites.where(status: false).count%></p>
+								<p>Ranking: <%=@prom %> </p>
+								<p>Servicios del Camping:</p>
+								<ul> 
+									<% camping.services.each do |servicio|%>
+										<li><%= servicio.name %> </li>
+									<% end %>
+								</ul>
+								
 								<%= link_to 'Ver Camping', camping_path(camping), class: "btn btn-dark"%>
 								<br><br>
 							</div>

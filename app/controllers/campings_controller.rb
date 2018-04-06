@@ -2,11 +2,21 @@ class CampingsController < ApplicationController
   before_action :set_camping, only: [:show, :edit, :update, :destroy,:admin_camp]
 
   def index
-  	@campings = Camping.all
+    @campings = Camping.all
+    reviews = Review.where(booking_id: Booking.where(campsite_id: Campsite.where(camping_id: @camping)))
+    suma = 0
+    reviews.each do |review|
+      suma += review.ranking
+    end
+    if reviews.count == 0
+      @prom = 'No hay evaluaciones aun.'
+    else 
+      @prom = suma / reviews.count
+    end
   end
 
   def my_campings
-      @campings = Camping.where(user_id: current_user)
+    @campings = Camping.where(user_id: current_user)
   end
 
   def home
@@ -14,11 +24,13 @@ class CampingsController < ApplicationController
   end
 
   def new
+    authorize! :new, Camping
     @camping = Camping.new
     @country = Country.all
   end
 
   def create
+    authorize! :create, Camping
   	camping = Camping.new(camping_params)
     camping.user = current_user
     if camping.save
@@ -36,10 +48,12 @@ class CampingsController < ApplicationController
   end
 
   def edit
+    authorize! :edit, Camping
     @country = Country.all
   end
 
   def update
+    authorize! :update, Camping
     if @camping.update(camping_params)
       redirect_to camping_path(@camping), notice: 'El Camping se ha actualizado con exito'
     else
@@ -48,6 +62,7 @@ class CampingsController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, Camping
     @camping.destroy
     redirect_to campings_path, notice: 'El registro se ha eliminado con exito'
   end

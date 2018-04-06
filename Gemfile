@@ -35,6 +35,7 @@ gem 'mini_magick'
 gem 'paypal-sdk-rest'
 gem 'httparty'
 gem 'cancancan'
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

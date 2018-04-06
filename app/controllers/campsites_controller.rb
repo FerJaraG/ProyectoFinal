@@ -1,6 +1,7 @@
 class CampsitesController < ApplicationController
 	before_action :set_campsite, only: [:show, :edit, :update, :destroy]
 	before_action :set_camping, only: [:index, :edit, :update, :show, :new, :create]
+	authorize_resource
 
 	def index
 		@campsites = Campsite.where(camping_id: @camping)
