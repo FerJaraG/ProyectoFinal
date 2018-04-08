@@ -6,8 +6,8 @@ class CreateBookings < ActiveRecord::Migration[5.1]
       t.float :price_per_day
       t.float :total_price
       t.date :booking_date
-      t.integer :adults_quantity
-      t.integer :kids_quantity
+      t.integer :adults_quantity, default: 0
+      t.integer :kids_quantity, default: 0
       t.string :observations
       t.integer :status, default: 0
       t.references :camping, foreign_key: true

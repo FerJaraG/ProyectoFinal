@@ -12,6 +12,8 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require modernizr-2.6.2.min
 //= require jquery.min
 //= require jquery.easing.1.3

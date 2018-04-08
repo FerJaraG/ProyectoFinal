@@ -28,16 +28,21 @@
 				</div>
 				<div class="row">
 					<% @user_bookings.each do |booking| %>
-						<div class="price-box popular">
+						<div class="price-box popular mr-50">
 							<ul class="pricing-info">
 									<h4>Reserva: <%= booking.id %></h4>
+									<li>Camping: <%= booking.camping.name %></li>
 									<li>Check In: <%= booking.check_in %></li>
 									<li>Check Out: <%= booking.check_out %></li>
 									<li>Sitio: <%= booking.campsite.identifier %></li>
 									<li>Precio Total: <%= booking.total_price.to_i %></li>
 									<li>Estado Pago: <%= booking.status %></li>
 									<li>Observaciones: <%= booking.observations %></li><br>
-									<%= link_to 'Escribir Review',  new_camping_booking_review_path(booking.camping_id,booking), class: "btn btn-primary btn-sm"%>
+									<% if booking.reviews.count == 0%>
+										<%= link_to 'Escribir Review',  new_camping_booking_review_path(booking.camping_id,booking), class: "btn btn-primary btn-sm"%>
+									<%elsif booking.reviews.count == 1%>
+										<li>Ya escribiste un review <br>para esta reserva</li>
+									<%end%>
 							</ul>
 						</div>
 					<% end %>		

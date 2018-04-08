@@ -123,9 +123,9 @@
 							<p>No hay opiniones asociadas al Camping aun</p>
 						<%else%>
 							<% @reviews.each do |review| %>
-									<h4><%= review.title %>  <%= review.created_at.strftime("%d-%m-%Y--%H:%M:%S") %>:</h4>
+									<h4><%= review.title %> <%= review.created_at.strftime("%d-%m-%Y") %> :</h4>
 									<p><%= review.comment %></p>
-									<p>Evaluación: <%= review.ranking %></p>
+									<p>Evaluación: <%= review.ranking.to_i %></p>
 							<% end %>
 						<%end%>
 					</ul>

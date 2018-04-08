@@ -37,7 +37,8 @@ gem 'httparty'
 gem 'cancancan'
 gem 'faker'
 gem 'geocoder'
-GEM 'gmaps4rails'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

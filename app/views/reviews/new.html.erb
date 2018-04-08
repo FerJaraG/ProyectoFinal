@@ -43,8 +43,17 @@
 
                         <div class="row form-group">
 							<div class="col-md-12">
-                                <%= f.label :ranking, 'Evalua tu estadía del 1 al 5:' %>
-                                <%= f.number_field :ranking, min: 1, max: 5, class: "form-control"%>
+                                <%= f.label :ranking, 'Evalua tu estadía!' %><br>
+								<%= f.label :ranking, "1", value: 1 %>
+    							<%= f.radio_button :ranking, 1, checked: true %>
+								<%= f.label :ranking, "2", value: 2 %>
+    							<%= f.radio_button :ranking, 2, checked: true %>
+								<%= f.label :ranking, "3", value: 3 %>
+    							<%= f.radio_button :ranking, 3, checked: true %>
+								<%= f.label :ranking, "4", value: 4 %>
+    							<%= f.radio_button :ranking, 4, checked: true %>
+								<%= f.label :ranking, "5", value: 5 %>
+    							<%= f.radio_button :ranking, 5, checked: true %>
                             </div>
 						</div>
 

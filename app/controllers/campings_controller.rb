@@ -13,6 +13,17 @@ class CampingsController < ApplicationController
     else 
       @prom = suma / reviews.count
     end
+
+    if user_signed_in?
+  		campings_map = Camping.near(current_user.address, 200, units: :km)
+  	else
+  		campings_map = Camping.all
+  	end
+
+	  @hash = Gmaps4rails.build_markers(campings_map) do |camping, marker|
+		  marker.lat camping.latitude
+		  marker.lng camping.longitude
+    end
   end
 
   def my_campings

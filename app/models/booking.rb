@@ -13,8 +13,11 @@ class Booking < ApplicationRecord
       values[:adult] = plan.price if plan.season.months.include? self.check_in.month and plan.adult?
       values[:child] = plan.price if plan.season.months.include? self.check_in.month and plan.child?
     end
-    values[:adult] *= self.adults_quantity 
-    values[:child] *= self.kids_quantity
+    if self.adults_quantity > 0
+      values[:adult] *= self.adults_quantity
+    elsif self.kids_quantity > 0 
+      values[:child] *= self.kids_quantity
+    end
     values
   end
 

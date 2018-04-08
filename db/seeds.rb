@@ -1,36 +1,36 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
+
 # Examples:
-#
+
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Country.create(name: "Chile")
+# Country.create!(name: "Chile")
 
-# region = Region.create([
-# {id: '1', country_id: 1 ,name: 'Región de Los Ríos'},
-# {id: '2', country_id: 1 ,name: 'Región Metropolitana'},
-# {id: '3', country_id: 1, name: 'Región de Magallanes y la Antártica Chilena'},
-# {id: '4', country_id: 1,name: 'Región de Aysén del General Carlos Ibáñez del Campo'},
-# {id: '5', country_id: 1 ,name: 'Región de Los Lagos'},
-# {id: '6', country_id: 1 ,name: 'Región de la Araucanía'},
-# {id: '7', country_id: 1 ,name: 'Región del Bío-Bío'},
-# {id: '8', country_id: 1 ,name: 'Región del Maule'},
-# {id: '9', country_id: 1 ,name: 'Región del Libertador General Bernardo OHiggins'},
-# {id: '10', country_id: 1 ,name: 'Región de Valparaiso'},
-# {id: '11', country_id: 1 ,name: 'Región de Coquimbo'},
-# {id: '12', country_id: 1,name: 'Región de Atacama'},
-# {id: '13', country_id: 1,name: 'Región de Antofagasta'},
-# {id: '14', country_id: 1 ,name: 'Región de Tarapacá'},
-# {id: '15', country_id: 1 ,name: 'Región de Arica y Parinacota'}
+# region = Region.create!([
+# {id: 12, country_id: 1 ,name: 'Región de Los Ríos'},
+# {id: 2, country_id: 1 ,name: 'Región Metropolitana'},
+# {id: 15, country_id: 1, name: 'Región de Magallanes y la Antártica Chilena'},
+# {id: 14, country_id: 1,name: 'Región de Aysén del General Carlos Ibáñez del Campo'},
+# {id: 13, country_id: 1 ,name: 'Región de Los Lagos'},
+# {id: 11, country_id: 1 ,name: 'Región de la Araucanía'},
+# {id: 10, country_id: 1 ,name: 'Región del Bío-Bío'},
+# {id: 8, country_id: 1 ,name: 'Región del Maule'},
+# {id: 9, country_id: 1 ,name: 'Región del Libertador General Bernardo OHiggins'},
+# {id: 6, country_id: 1 ,name: 'Región de Valparaiso'},
+# {id: 5, country_id: 1 ,name: 'Región de Coquimbo'},
+# {id: 4, country_id: 1,name: 'Región de Atacama'},
+# {id: 3, country_id: 1,name: 'Región de Antofagasta'},
+# {id: 7, country_id: 1 ,name: 'Región de Tarapacá'},
+# {id: 1, country_id: 1 ,name: 'Región de Arica y Parinacota'}
 # ])
 
 # city = City.create!([
 # {id:1,name:'Arica',region_id:1},
 # {id:2,name:'Parinacota',region_id:1},
-# {id:3,name:'Iquique',region_id:2},
-# {id:4,name:'El Tamarugal',region_id:2},
+# {id:3,name:'Iquique',region_id:7},
+# {id:4,name:'El Tamarugal',region_id:7},
 # {id:5,name:'Antofagasta',region_id:3},
 # {id:6,name:'El Loa',region_id:3},
 # {id:7,name:'Tocopilla',region_id:3},
@@ -47,15 +47,15 @@
 # {id:18,name:'San Antonio',region_id:6},
 # {id:19,name:'San Felipe de Aconcagua',region_id:6},
 # {id:20,name:'Valparaiso',region_id:6},
-# {id:21,name:'Chacabuco',region_id:7},
-# {id:22,name:'Cordillera',region_id:7},
+# {id:21,name:'Chacabuco',region_id:2},
+# {id:22,name:'Cordillera',region_id:2},
 # {id:23,name:'Maipo',region_id:2},
 # {id:24,name:'Melipilla',region_id:2},
 # {id:25,name:'Santiago',region_id:2},
-# {id:26,name:'Talagante',region_id:7},
-# {id:27,name:'Cachapoal',region_id:8},
-# {id:28,name:'Cardenal Caro',region_id:8},
-# {id:29,name:'Colchagua',region_id:8},
+# {id:26,name:'Talagante',region_id:2},
+# {id:27,name:'Cachapoal',region_id:9},
+# {id:28,name:'Cardenal Caro',region_id:9},
+# {id:29,name:'Colchagua',region_id:9},
 # {id:30,name:'Cauquenes',region_id:9},
 # {id:31,name:'Curicó',region_id:9},
 # {id:32,name:'Linares',region_id:9},
@@ -72,7 +72,7 @@
 # {id:43,name:'Llanquihue',region_id:13},
 # {id:44,name:'Osorno',region_id:13},
 # {id:45,name:'Palena',region_id:13},
-# {id:46,name:'Aisén',region_id:14},
+# {id:46,name:'Aysén',region_id:14},
 # {id:47,name:'Capitán Prat',region_id:14},
 # {id:48,name:'Coihaique',region_id:14},
 # {id:49,name:'General Carrera',region_id:14},
@@ -429,139 +429,440 @@
 # {id:345,name:'Torres del Paine',city_id:53}
 # ])
 
-# Genre.create(name: 'Femenino')
-# Genre.create(name: 'Masculino')
-# Genre.create(name: 'Indefinido')
-# Genre.create(name: 'Prefiere no decir')
+# Genre.create!(name: 'Femenino')
+# Genre.create!(name: 'Masculino')
+# Genre.create!(name: 'Indefinido')
+# Genre.create!(name: 'Prefiere no decir')
 
-# Service.create(name: 'Baño')
-# Service.create(name: 'Ducha')
-# Service.create(name: 'Lavadora')
-# Service.create(name: 'Piscina')
-# Service.create(name: 'Lavaderos')
-# Service.create(name: 'Juegos Infantiles')
-# Service.create(name: 'Telefono')
-# Service.create(name: 'Internet')
-# Service.create(name: 'Quincho')
-# Service.create(name: 'Arriendo Bicicletas')
-# Service.create(name: 'Se Permiten Mascotas')
-# Service.create(name: 'Cancha de Futbol')
-# Service.create(name: 'Cancha de Voley')
-# Service.create(name: 'Arriendo de Caballos')
-# Service.create(name: 'Mesas Picnic')
-# Service.create(name: 'Almacen Interior')
-# Service.create(name: 'Arriendo de Kayac')
+# Service.create!(name: 'Baño')
+# Service.create!(name: 'Ducha')
+# Service.create!(name: 'Lavadora')
+# Service.create!(name: 'Piscina')
+# Service.create!(name: 'Lavaderos')
+# Service.create!(name: 'Juegos Infantiles')
+# Service.create!(name: 'Telefono')
+# Service.create!(name: 'Internet')
+# Service.create!(name: 'Quincho')
+# Service.create!(name: 'Arriendo Bicicletas')
+# Service.create!(name: 'Se Permiten Mascotas')
+# Service.create!(name: 'Cancha de Futbol')
+# Service.create!(name: 'Cancha de Voley')
+# Service.create!(name: 'Arriendo de Caballos')
+# Service.create!(name: 'Mesas Picnic')
+# Service.create!(name: 'Almacen Interior')
+# Service.create!(name: 'Arriendo de Kayac')
 
-# Season.create(name: 'Alta', start_date: '2018-10-31', end_date: '2019-03-31')
-# Season.create(name: 'Baja', start_date: '2018-04-01', end_date: '2018-10-30')
+# Season.create!(name: 'Alta', start_date: '2018-10-31', end_date: '2019-03-31')
+# Season.create!(name: 'Baja', start_date: '2018-04-01', end_date: '2018-10-30')
 
-# Currency.create(iso: 'CLP', name: 'Peso Chileno')
-# Currency.create(iso: 'USD', name: 'Dolar Americano')
+# Currency.create!(iso: 'CLP', name: 'Peso Chileno')
+# Currency.create!(iso: 'USD', name: 'Dolar Americano')
 
-# Paymentmethod.create(name: 'Tarjeta de Credito')
-# Paymentmethod.create(name: 'Efectivo')
-# Paymentmethod.create(name: 'Paypal')
+# Paymentmethod.create!(name: 'Tarjeta de Credito')
+# Paymentmethod.create!(name: 'Efectivo')
+# Paymentmethod.create!(name: 'Paypal')
 
-# User.create(id: 2, email: 'person1@gmail.com', password: '123456', user_type: 'person')
-# User.create(id: 3, email: 'person2@gmail.com', password: '123456', user_type: 'person')
-# User.create(id: 4, email: 'person3@gmail.com', password: '123456', user_type: 'person')
-# User.create(id: 5, email: 'person4@gmail.com', password: '123456', user_type: 'person')
-# User.create(id: 6, email: 'person5@gmail.com', password: '123456', user_type: 'person')
-# User.create(id: 7, email: 'camping1@gmail.com', password: '123456', user_type: 'camping')
-# User.create(id: 8, email: 'camping2@gmail.com', password: '123456', user_type: 'camping')
-# User.create(id: 9, email: 'camping3@gmail.com', password: '123456', user_type: 'camping')
-# User.create(id: 10, email: 'camping4@gmail.com', password: '123456', user_type: 'camping')
-# User.create(id: 11, email: 'camping5@gmail.com', password: '123456', user_type: 'camping')
-
-# Camping.create(id:1, name: 'Camping El Canto de Chucao', description: 'Camping ubicado en una increíble playa del Lago Ranco, en la península de Illahuapi. Con excelente instalaciones y entorno para un descanso familiar, disfrutando del turismo étnico y aguas cálidas. El Canto del Chucao, cuenta con un camping con seis sitios (cinco a orilla del lago), cancha de fútbol y de voley, barco para travesías, animales, senderos, entre otros atractivos.', user_id: 7, camping_type: 'camping', commune_id: 293, address:'illahuapi, Lago Ranco, Región de los Ríos', latitude: -40.262333, longitude: -72.311899, info: 'No tenemos baños para discapacitados, cada sitio tiene fogón, en caso de necesitar parrilla deben solicitarla, tenemos cobertura de celular.', phone: '+56998694127', email: 'vivi1221.lorena@gmail.com', tourism: 'Tenemos río cerca del camping, muchos arboles, estamos emplazados a orillas del Lago Ranco, contamos con un muelle para lanchas, canchas de futbol y Voley, juegos para niños, trekking, paseos en lancha.')
-# Camping.create(id:2, name: 'Camping Ecoturismo La Pancha', description: 'En el Sur de la Patagonia chilena, a siete kilómetros de Puerto Aysén, encontramos Ecoturismo la Pancha, un lugar al pie del cañón nevado, del cual nacen varias vertientes que llenan el Río los Palos que bordea el lugar. Éste es un espacio ideal para quienes buscan tranquilidad y una conexión intima con la Patagonia Chilena.', user_id: 8, camping_type: 'camping', commune_id: 325, address:'X-528, Aysén, XI Región', latitude: -45.351599, longitude: -72.706113, info: 'Contamos con un espacio amplio rodeado de un arroyo y el río los Palos, habilitados con 10 sitios de camping en una pampa siempre verde. Al ingreso, todo huésped debe registrarse en el Libro o cuadernillo de Registro de Pasajeros. Estacionar su vehículo frente a cada sitio, en los lugares designados (el ingreso de un segundo vehículo debe ser coordinado con Recepción). Dentro de las medidas de sustentabilidad Camping Ecoturismo La Pancha solicita a sus huéspedes reciclar sus residuos en los contenedores correspondientes. Además, se agradece un buen uso de la energía y agua. Horario del servicio de aseo: a partir de las 09:30 a 12:00 hrs. (si el sitio de camping no está desocupado, el aseo se realizará desde las 15:00 hrs. en adelante). La zona Wifi se encuentra en el sector de recepción.', phone: '+56944031514', email: 'quincholapancha@gmail.com', tourism: 'Todas estas instalaciones se complementan al servicio de kayak y cabalgatas, que hacen de Ecoturismo la Pancha un lugar ideal para pasar unos días en medio de la patagonia.', web: ' www.ecoturismolapancha.cl', facebook: 'https://www.facebook.com/CampingLaPancha'   )
-# Camping.create(id:3, name: 'Camping Los Copihues de Casablanca', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 9, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:4, name: 'Camping Los Copihues de Casablanca 2', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 10, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:5, name: 'Camping Los Copihues de Casablanca 3', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 6, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:6, name: 'Camping Los Copihues de Casablanca 4', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 7, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:7, name: 'Camping Los Copihues de Casablanca 5', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 8, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:8, name: 'Camping Los Copihues de Casablanca 6', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 7, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:9, name: 'Camping Los Copihues de Casablanca 7', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 6, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:10, name: 'Camping Los Copihues de Casablanca 8', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 9, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
-# Camping.create(id:11, name: 'Camping Los Copihues de Casablanca 9', description: 'Camping Los Copihues de Casablanca se encuentra ubicado a 21 Km Ruta Valdivia-Paillaco. Cuenta con sitios techados, baño pùblico, estero. Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión. Lugar rodeado de naturaleza, estero especial para los niños, juegos, espacios para caminar, trotar, quincho, sitios con mesones, bancas, etc.', user_id: 7, camping_type: 'camping', commune_id: 288, address:'Camino, Paillaco, Valdivia, Región de los Ríos', latitude: -39.953367, longitude: -73.096580, info: 'Espacio familiar entre estrero y bosque endémico de la Selva Valdiviana. Quincho para reuniones familiares o grupales. Cancha de fútbol, cancha de Tejo, juegos infantiles, baños entre otros servicios.', phone: '+56985973010', email: 'mario-fierro@hotmail.com', tourism: 'Se encuentra rodeado por amplia variedad de flora y tiene espacio suficiente que permite relajaciòn y diversión.', web: '', facebook: 'https://www.facebook.com/campingloscopihuesdecasablanca/'   )
+# birthday = ['1989-07-12', '1989-11-18', '1955-11-10', '1954-05-27', '1982-06-17']
 
 # 20.times do |i|
-#     Camping.create(
-    # name: Faker::StarWars.planet,
-    # description: Faker::StarWars.quote,
-    #   user_id:,
-    #   camping_type:,
-    #   commune_id:,
-    #   address:,
-    #   latitude:,
-    #   longitude:,
-    #   info:,
-    #   images:,
-    #   phone:,
-    #   email:,
-    #   tourism:,
-    #   web:,
-    #   facebook:
-    #   )
-          
-#    end
+#     User.create!(
+#         email: "person#{i}@gmail.com", 
+#         name: Faker::HarryPotter.character, 
+#         lastName: Faker::HarryPotter.house ,
+#         user_type: 'person',
+#         password: '123456',
+#         birthday: birthday.sample,
+#         genre: Genre.order("RANDOM()").first,
+#         commune: Commune.order("RANDOM()").first,
+#         biography: Faker::Movie.quote,
+#         image: Rails.root.join("app/assets/images/users/user1.jpg").open,
+#         address: Faker::Address.street_address,
+#         phone: Faker::PhoneNumber.phone_number
+#     )
+# end
 
-# 50.times do |i|
+# 20.times do |i|
+#     User.create!(
+#         email: "camping#{i}@gmail.com", 
+#         name: Faker::HarryPotter.character, 
+#         lastName: Faker::HarryPotter.location ,
+#         user_type: 'camping',
+#         password: '123456',
+#         birthday: birthday.sample,
+#         genre: Genre.order("RANDOM()").first,
+#         commune: Commune.order("RANDOM()").first,
+#         biography: Faker::Movie.quote,
+#         image: Rails.root.join("app/assets/images/users/user1.jpg").open,
+#         address: Faker::Address.street_address,
+#         phone: Faker::PhoneNumber.phone_number
+#     )
+# end
+
+# Camping.create!(name: 'Faker::StarWars.planet',
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 1 ,
+#     address: 'Pedro Lagos, Arica, Región de Arica y Parinacota',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 18 ,
+#     address: 'Tocopilla 481, San Pedro de Atacama, Región de Antofagasta',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 18 ,
+#     address: 'Caracoles 101-A, San Pedro de Atacama, Región de Antofagasta',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 38 ,
+#     address: 'D-485 8360, Paihuaco, Región de Coquimbo',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 133 ,
+#     address: 'Las Acacias 323, Talagante, Región Metropolitana',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 108 ,
+#     address: '3011, Alvaro Casanova 2751, La Reina, Las Condes, Región Metropolitana',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 81 ,
+#     address: 'Camino Internacional 4706, Viña del Mar, Región de Valparaíso',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 179 ,
+#     address: 'L-21, Colbun, Colbún, VII Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 178 ,
+#     address: 'Camino el Mirador S/N, Vichuquen, Vichuquén, VII Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 313 ,
+#     address: 'Ruta 225, Ensenada, Puerto Varas, X Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 295 ,
+#     address: 'Costanera Nte. 53, Ancud, X Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 321 ,
+#     address: '2 km South from Chaitén Route 7, Carr Austral, Chaiten, Chaitén, X Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 325 ,
+#     address: 'X-528, Aysén, XI Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 321 ,
+#     address: 'km 13, Ruta 235, Chaitén, X Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#      service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 328 ,
+#     address: 'Dr. Steffens 451, Cochrane, XI Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#      service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 324 ,
+#     address: '1365, Ruta 235 1307, Palena, X Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#      service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 28 ,
+#     address: 'Camino Huasco S/N, Huasco, III Región',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#      service_ids: [1,2,6,7,9,11,15]
+# )
+
+
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 345 ,
+#     address: 'Sector Refugio Lago Dickson, Torres del Paine, Torres de Paine, Región de Magallanes y de la Antártica Chilena',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'camping',
+#     commune_id: 345 ,
+#     address: 'Avenida Guanaqueros 2501',
+#     info: Faker::Lovecraft.paragraph,
+#     #images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]  
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 338 ,
+#     address: 'Caupolicán 411, Punta Arenas, Región de Magallanes y de la Antártica Chilena',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# Camping.create!(name: Faker::StarWars.planet,
+#     description: Faker::StarWars.quote,
+#     user: User.order("RANDOM()").find_by(user_type: 'camping'),
+#     camping_type: 'patio',
+#     commune_id: 338 ,
+#     address: 'Y-570, Punta Arenas, Región de Magallanes y de la Antártica Chilena',
+#     info: Faker::Lovecraft.paragraph,
+#     images: [Rails.root.join("app/assets/images/campings/Camping1.jpg").open, Rails.root.join("app/assets/images/campings/Camping2.jpg").open, Rails.root.join("app/assets/images/campings/Camping3.jpg").open,Rails.root.join("app/assets/images/campings/Camping4.jpg").open, Rails.root.join("app/assets/images/campings/Camping5.jpg").open],
+#     phone: Faker::PhoneNumber.phone_number,
+#     email: Faker::Internet.email,
+#     tourism: Faker::Lovecraft.paragraph,
+#     web: Faker::Internet.url,
+#     facebook: "www.facebook.com/sitiocamping",
+#     service_ids: [1,2,6,7,9,11,15]
+# )
+
+# 150.times do |i|
 #     Campsite.create(
 #         identifier: "Sitio_#{i}", 
-#         description: "Sitio para #{i} personas", 
+#         description: "Sitio con mesa y parrilla", 
 #         camping: Camping.order("RANDOM()").first ,
 #         status: false)
 # end
 
-# Plan.create(season_id:1 , person_type:'adult', camping_id:2 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:2 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:2 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:2 , price: 1000)
+# 21.times do |i|
+#     Plan.create!(season_id:1 , person_type:'adult', camping_id:"#{1+i}" , price: 4000)
+#     Plan.create!(season_id:1 , person_type:'child', camping_id:"#{1+i}" , price: 2000)
+#     Plan.create!(season_id:2 , person_type:'adult', camping_id:"#{1+i}" , price: 2000)
+#     Plan.create!(season_id:2 , person_type:'child', camping_id:"#{1+i}" , price: 1000)
+# end
 
-# Plan.create(season_id:1 , person_type:'adult', camping_id:3 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:3 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:3 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:3 , price: 1000)
 
-# Plan.create(season_id:1 , person_type:'adult', camping_id:4 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:4 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:4 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:4 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:5 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:5 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:5 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:5 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:6 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:6 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:6 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:6 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:7 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:7 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:7 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:7 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:8 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:8 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:8 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:8 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:9 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:9 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:9 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:9 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:10 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:10 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:10 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:10 , price: 1000)
-
-# Plan.create(season_id:1 , person_type:'adult', camping_id:11 , price: 4000)
-# Plan.create(season_id:1 , person_type:'child', camping_id:11 , price: 2000)
-# Plan.create(season_id:2 , person_type:'adult', camping_id:11 , price: 2000)
-# Plan.create(season_id:2 , person_type:'child', camping_id:11 , price: 1000)
-
-# Booking.create(check_in: '2018-04-07' , check_out: '2018-04-12', price_per_day: , total_price: , booking_date: , adults_quantity: , kids_quantity: , observations: , status: , camping_id: , user_id: , campsite_id: , created_at: , updated_at: , billing_id: ) 
+# Booking.create!(check_in: '2018-04-07', 
+#     check_out: '2018-04-12', 
+#     price_per_day: 3000, 
+#     total_price: 15000, 
+#     booking_date: date.now, 
+#     adults_quantity: 1, 
+#     kids_quantity: 1, 
+#     observations: Faker::HarryPotter.quote, 
+#     status: 'pendiente', 
+#     camping: Camping.order("RANDOM()").first , 
+#     user: User.order("RANDOM()").find_by(user_type: 'person') , 
+#     campsite_id: Campsite.order("RANDOM()").find_by(status: false), 
+# )
+ 
