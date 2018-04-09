@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   resources :campings do  
-      get :home, on: :collection
+      get :home, on: :collection 
+      get :search, on: :collection
       get :my_campings, on: :collection
       get :admin_camp, on: :member
       get :find_address, on: :collection

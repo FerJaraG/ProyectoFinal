@@ -120,10 +120,10 @@
 				<div class="col-md-8 col-md-offset-2">
 					<ul class="price-box popular">
 						<%if @reviews.empty?%>
-							<p>No hay opiniones asociadas al Camping aun</p>
+							<p>No hay opiniones asociadas al Camping aun.</p>
 						<%else%>
 							<% @reviews.each do |review| %>
-									<h4><%= review.title %> <%= review.created_at.strftime("%d-%m-%Y") %> :</h4>
+									<h4>El <%= review.created_at.strftime("%d-%m-%Y") %> <%= review.booking.user.name%> escribió:</h4>
 									<p><%= review.comment %></p>
 									<p>Evaluación: <%= review.ranking.to_i %></p>
 							<% end %>

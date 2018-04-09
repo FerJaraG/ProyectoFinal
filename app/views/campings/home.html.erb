@@ -20,25 +20,25 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Encuentra tu Camping</h3>
-											<form action="#">
+											<%= form_with(url: campings_path, local: true, method: :get) do |f| %>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="fullname">Destino</label>
-														<input type="text" id="fullname" class="form-control">
+														<%= f.label :destino, 'Destino:' %>
+														<%= f.text_field :destino, autofocus: true, class: "form-control", required: true %>
 													</div>
 												</div>
 												
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="date-start">Fecha Inicio</label>
-														<input type="text" id="date-start" class="form-control">
+														<%= f.label :check_in, 'Desde:' %>
+														<%= f.date_field :check_in, class: "form-control", required: true%>
 													</div>
 												</div>
 
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="date-end">Fecha Termino</label>
-														<input type="text" id="date-end" class="form-control">
+														<%= f.label :check_out, 'Hasta:' %>
+														<%= f.date_field :check_out, class: "form-control", required: true%>
 													</div>
 												</div>
 
@@ -47,7 +47,7 @@
 														<input type="submit" class="btn btn-primary btn-block" value="Buscar">
 													</div>
 												</div>
-											</form>	
+											<%end%>	
 										</div>
 
 										
