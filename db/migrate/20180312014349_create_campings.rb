@@ -9,7 +9,7 @@ class CreateCampings < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :latitude
       t.string :longitude
-      t.string :info
+      t.string :rules
 
       t.timestamps
     end
