@@ -498,7 +498,7 @@ end
     )
 end
 
-Camping.create!(name: 'Faker::StarWars.planet',
+Camping.create!(name: Faker::StarWars.planet,
     description: Faker::StarWars.quote,
     user: User.order("RANDOM()").find_by(user_type: 'camping'),
     camping_type: 'camping',
