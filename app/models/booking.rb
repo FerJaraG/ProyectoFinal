@@ -5,7 +5,9 @@ class Booking < ApplicationRecord
   has_many :reviews, dependent: :destroy
   belongs_to :billing, optional: true
   enum status: [:pendiente, :pagar, :pagado]
-  # validate :booking_period_not_overlapped
+  validates :check_in, :check_out, :adults_quantity, presence: true
+  validates :adults_quantity, :kids_quantity, numericality: { only_integer: true }
+  validates :price_per_day, :total_price, numericality: true
 
   def value_calc
     values = {}
@@ -21,13 +23,4 @@ class Booking < ApplicationRecord
     values
   end
 
-    # def period_overlapped?
-    #   unless Booking.where(
-    #     '(check_in <= ? AND check_out >= ?) OR (check_in >= ? AND check_out <= ?)',
-    #     check_in, check_out,
-    #     check_in, check_out
-    #   ).empty?
-    #    false
-    #   end
-    # end
 end

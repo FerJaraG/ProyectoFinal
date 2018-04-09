@@ -1,6 +1,6 @@
 class CampsitesController < ApplicationController
 	before_action :set_campsite, only: [:show, :edit, :update, :destroy]
-	before_action :set_camping, only: [:index, :edit, :update, :show, :new, :create]
+	before_action :set_camping
 	authorize_resource
 
 	def index
@@ -36,8 +36,11 @@ class CampsitesController < ApplicationController
 	end
 
 	def destroy
-		@campsite.destroy
-		redirect_to camping_campsites(@camping, @campsite.id), notice: 'El registro se ha eliminado con exito'
+		if @campsite.destroy
+			redirect_to camping_campsites_path(@camping), notice: 'El registro se ha eliminado con exito'
+		else 
+			redirect_to camping_campsites_path(@camping), alert: 'No se puede eliminar sitio, Booking asociado.'
+		end
 	end
 
 	private

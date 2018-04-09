@@ -13,4 +13,5 @@ class Camping < ApplicationRecord
   has_many :transactions, through: :bookings
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+  validates :name, :user_id, :camping_type, :commune_id, presence: true
 end

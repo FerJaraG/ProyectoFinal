@@ -36,6 +36,7 @@
 									<h3>Temporada <%= plan.season.name %></h3>
 									<p><%= if plan.person_type == 'adult' then 'Adulto' else 'Niño' end %>: <%= plan.price %></p>
 									<%= link_to 'Editar',  edit_camping_plan_path(@camping,plan), class: "btn btn-primary btn-sm"%>								
+									<%= link_to 'Eliminar', camping_plan_path(@camping,plan), method: :delete, class: "btn btn-primary btn-sm"%>								
 								</div>
 								<br>
 						</div>

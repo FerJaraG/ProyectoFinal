@@ -464,7 +464,7 @@
 
 # birthday = ['1989-07-12', '1989-11-18', '1955-11-10', '1954-05-27', '1982-06-17']
 
-# 20.times do |i|
+# 10.times do |i|
 #     User.create!(
 #         email: "person#{i}@gmail.com", 
 #         name: Faker::HarryPotter.character, 
@@ -476,12 +476,12 @@
 #         commune: Commune.order("RANDOM()").first,
 #         biography: Faker::Movie.quote,
 #         image: Rails.root.join("app/assets/images/users/user1.jpg").open,
-#         address: Faker::Address.street_address,
+#         address: 'Miguel Claro 1074',
 #         phone: Faker::PhoneNumber.phone_number
 #     )
 # end
 
-# 20.times do |i|
+# 15.times do |i|
 #     User.create!(
 #         email: "camping#{i}@gmail.com", 
 #         name: Faker::HarryPotter.character, 

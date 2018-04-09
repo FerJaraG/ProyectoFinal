@@ -40,7 +40,8 @@
 									<%else%>
 										<p>Estado: Disponible</p>
 									<%end%>
-									<%= link_to 'Editar',  edit_camping_campsite_path(@camping,campsite), class: "btn btn-primary btn-sm"%>
+									<%= link_to 'Editar', edit_camping_campsite_path(@camping,campsite), class: "btn btn-primary btn-sm"%>
+									<%= link_to 'Eliminar', camping_campsite_path(@camping,campsite), method: :delete, class: "btn btn-primary btn-sm"%>
 
 								</div>
 						</div>

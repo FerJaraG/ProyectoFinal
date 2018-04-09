@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-	before_action :set_camping, only: [:index,:create,:edit, :update,:show,:new]
+	before_action :set_camping
 	before_action :set_plan, only: [:show, :edit, :update, :destroy]
 	authorize_resource
 
@@ -39,8 +39,11 @@ class PlansController < ApplicationController
 	end
 
 	def destroy
-		@plan.destroy
-		redirect_to camping_plans_path, notice: 'El registro se ha eliminado con exito'
+		if @plan.destroy
+			redirect_to camping_plans_path(@camping), notice: 'El registro se ha eliminado con exito'
+		else 
+			redirect_to camping_plans_path(@camping), alert: 'No se ha podido eliminar registro.'
+		end
 	end
 
 	private

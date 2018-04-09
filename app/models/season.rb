@@ -1,6 +1,6 @@
 class Season < ApplicationRecord
     has_many :plans
-
+    validates :name, presence: true
 
     # Este metodo soluciona la comparación de meses para identificar la temporada.
     # Analizar la necesidad de remover los campos start_date y end_date en tabla seasons.
