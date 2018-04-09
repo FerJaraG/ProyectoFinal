@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
           booking.total_price = booking.price_per_day * ((booking.check_out - booking.check_in).to_i)
           booking.booking_date = Date.today
         
-          booking.save
+          if booking.save
             redirect_to prepayment_camping_booking_path(@camping,booking.id), notice: "Se ha reservado con exito"
           else
             redirect_to new_camping_booking_path(@camping), alert: "No se pudo guardar reserva."
@@ -68,7 +68,7 @@ class BookingsController < ApplicationController
 
     def set_booking
         @booking = Booking.find(params[:id])
-      end
+    end
   
     def set_camping
       @camping = Camping.find(params[:camping_id])
