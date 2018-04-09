@@ -2,13 +2,16 @@ class CampingsController < ApplicationController
   before_action :set_camping, only: [:show, :edit, :update, :destroy,:admin_camp]
 
   def index
-    if params[:check_in].present? or params[:check_out].present? or params[:destino].present?
-      @campings = Camping.order(:name).page(params[:page]).per(9)
-      @camps = Camping.all.count
-    else
+    if params[:desitino] != ""
+      @campings = Camping.where(commune_id: Commune.where("name LIKE ?", "%#{params[:destino]}%").select(:id)).page(params[:page]).per(9)
+      @camps = Camping.where(commune_id: Commune.where("name LIKE ?", "%#{params[:destino]}%").select(:id)).count
+    elsif params[:check_in] != "" and params[:check_out] != ""
       @campings = Camping.select(:id,:name,:commune_id).distinct.joins(:campsites).where.not(campsites: {id: Booking.where("(check_in <= ? and check_out >= ?) or (check_in < ? and check_out >= ?) or (? <= check_in and ? >= check_in)", params[:check_in],params[:check_out], params[:check_in], params[:check_in],params[:check_out],params[:check_in]).select(:campsite_id)}).where(commune_id: Commune.where("name LIKE ?", "%#{params[:destino]}%").select(:id)).page(params[:page]).per(9)
       @camps = Camping.select(:id).distinct.joins(:campsites).where.not(campsites: {id: Booking.where("(check_in <= ? and check_out >= ?) or (check_in < ? and check_out >= ?) or (? <= check_in and ? >= check_in)", params[:check_in],params[:check_out], params[:check_in], params[:check_in],params[:check_out],params[:check_in]).select(:campsite_id)}).where(commune_id: Commune.where("name LIKE ?", "%#{params[:destino]}%").select(:id)).count
-    end    
+    else
+      @campings = Camping.order(:name).page(params[:page]).per(9)
+      @camps = Camping.all.count
+    end  
     
     reviews = Review.where(booking_id: Booking.where(campsite_id: Campsite.where(camping_id: @camping)))
 

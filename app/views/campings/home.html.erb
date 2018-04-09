@@ -31,14 +31,14 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<%= f.label :check_in, 'Desde:' %>
-														<%= f.date_field :check_in, class: "form-control", required: true%>
+														<%= f.date_field :check_in, class: "form-control"%>
 													</div>
 												</div>
 
 												<div class="row form-group">
 													<div class="col-md-12">
 														<%= f.label :check_out, 'Hasta:' %>
-														<%= f.date_field :check_out, class: "form-control", required: true%>
+														<%= f.date_field :check_out, class: "form-control"%>
 													</div>
 												</div>
 
@@ -74,7 +74,7 @@
 			<div class="row">
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-				   <a href="<%= campings_path %>" class="fh5co-card-item image-popup">		
+				   <a href="<%= campings_path %>" class="fh5co-card-item">		
 						<figure>
 							<div class="overlay"></div>
 							<%= image_tag 'atacama.jpg', class: "img-responsive" %>
@@ -82,12 +82,11 @@
 						<div class="fh5co-text">
 							<h2>Región de Atacama</h2>
 							<p>Famosa por su hermosa ciudad de San Pedro y el Desierto florido.</p>
-							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="#" class="fh5co-card-item image-popup">
+					<a href="<%= campings_path %>" class="fh5co-card-item">
 						<figure>
 							<div class="overlay"></div>
 							<%= image_tag 'magallanes.jpg', class: "img-responsive" %>
@@ -95,12 +94,11 @@
 						<div class="fh5co-text">
 							<h2>Región de Magallanes</h2>
 							<p>Famosa por las hermosas Torres del Paine y sus Lagos.</p>
-							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="#" class="fh5co-card-item image-popup">
+					<a href="<%= campings_path %>" class="fh5co-card-item">
 						<figure>
 							<div class="overlay"></div>
 							<%= image_tag 'loslagos.jpg', class: "img-responsive" %>
@@ -108,14 +106,13 @@
 						<div class="fh5co-text">
 							<h2>Región de Los Lagos</h2>
 							<p>Famosa por sus bosques, hermosos lagos y montañas.</p>
-							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
 					</a>
 				</div>
 
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="#" class="fh5co-card-item image-popup">
+					<a href="<%= campings_path %>" class="fh5co-card-item">
 						<figure>
 							<div class="overlay"></div>
 							<%= image_tag 'coquimbo.jpg', class: "img-responsive" %>
@@ -123,13 +120,12 @@
 						<div class="fh5co-text">
 							<h2>Región de Coquimbo</h2>
 							<p>Famosa por el Valle del Elqui, su hermoso cielo y su Pisco.</p>
-							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
 					</a>
 				</div>
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="#" class="fh5co-card-item image-popup">
+					<a href="<%= campings_path %>" class="fh5co-card-item">
 						<figure>
 							<div class="overlay"></div>
 							<%= image_tag 'metropolitana.jpg', class: "img-responsive" %>
@@ -137,13 +133,12 @@
 						<div class="fh5co-text">
 							<h2>Región Metropolitana</h2>
 							<p>Famosa por su cercanía a la Cordillera de los Andes.</p>
-							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
 					</a>
 				</div>
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="#" class="fh5co-card-item image-popup">
+					<a href="<%= campings_path %>" class="fh5co-card-item">
 						<figure>
 							<div class="overlay"></div>
 							<%= image_tag 'maule.jpg', class: "img-responsive" %>
@@ -151,7 +146,6 @@
 						<div class="fh5co-text">
 							<h2>Región del Maule</h2>
 							<p>Famosa por el Parque de las Siete Tazas y sus viñas</p>
-							<p><span class="btn btn-primary">Reserva Ahora</span></p>
 						</div>
 					</a>
 				</div>
@@ -276,7 +270,7 @@
 	</div>
 
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+		<a href="#" class="js-gotop">**</a>
 	</div>
 	
 	
