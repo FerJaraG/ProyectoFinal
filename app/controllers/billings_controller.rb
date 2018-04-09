@@ -26,8 +26,8 @@ class BillingsController < ApplicationController
 				:payer =>  {
 					:payment_method =>  "paypal" },
 				:redirect_urls => {
-					:return_url => "http://localhost:3000/billings/execute",
-					:cancel_url => "http://localhost:3000/" },
+					:return_url => "#{request.base_url}/billings/execute",
+					:cancel_url => "#{request.base_url}/" },
 				:transactions =>  [{
 					:item_list => {
 						:items => @bookings},
