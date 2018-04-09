@@ -67,7 +67,7 @@ class BillingsController < ApplicationController
 
 			redirect_to campings_path, notice: "El pago se realizó con éxito!"
 		else
-				render plain: ":("
+			redirect_to campings_path, notice: "El pago no se realizó :("
 		end
 	end
 end
