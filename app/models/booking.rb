@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
   belongs_to :billing, optional: true
   enum status: [:pendiente, :pagar, :pagado]
   validates :check_in, :check_out, :adults_quantity, presence: true
-  validates :adults_quantity, :kids_quantity, numericality: { only_integer: true }
+  validates :adults_quantity, numericality: { only_integer: true }
   validates :price_per_day, :total_price, numericality: true
 
   def value_calc

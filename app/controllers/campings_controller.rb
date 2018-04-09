@@ -13,18 +13,6 @@ class CampingsController < ApplicationController
       @camps = Camping.all.count
     end  
     
-    reviews = Review.where(booking_id: Booking.where(campsite_id: Campsite.where(camping_id: @camping)))
-
-    suma = 0
-    reviews.each do |review|
-      suma += review.ranking
-    end
-    if reviews.count == 0
-      @prom = 'No hay evaluaciones aun.'
-    else 
-      @prom = suma / reviews.count
-    end
-
     if user_signed_in?
   		campings_map = Camping.near(current_user.address, 200, units: :km)
   	else
@@ -48,8 +36,8 @@ class CampingsController < ApplicationController
 
   def new
     authorize! :new, Camping
-    @camping = Camping.new
     @country = Country.all
+    @camping = Camping.new
   end
 
   def create
@@ -114,7 +102,7 @@ class CampingsController < ApplicationController
   end
   
   def camping_params
-    params.require(:camping).permit(:name,:description,:user_id, :phone, :email,:web,:facebook, :tourism,:camping_type,:commune_id,:address,:latitude,:longitude,:rules, {images: []}, service_ids:[])
+    params.require(:camping).permit(:name,:description,:user_id, :phone, :email,:web,:facebook, :tourism,:camping_type,:commune_id,:address,:latitude,:longitude,:info, {images: []}, service_ids:[])
   end
   
 end

@@ -29,10 +29,10 @@ class BookingsController < ApplicationController
           booking.total_price = booking.price_per_day * ((booking.check_out - booking.check_in).to_i)
           booking.booking_date = Date.today
         
-          if booking.save
+          booking.save
             redirect_to prepayment_camping_booking_path(@camping,booking.id), notice: "Se ha reservado con exito"
           else
-            redirect_to new_camping_booking_path(@camping), notice: "No hay sitio disponible"
+            redirect_to new_camping_booking_path(@camping), alert: "No se pudo guardar reserva."
           end
        end
     end
@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
     end
   
     def update
-      @booking.update(booking_params)
+      if @booking.update(booking_params)
         redirect_to edit_camping_booking_path(@camping, @booking.id), notice: 'La reserva se ha actualizado con exito'
       else
         redirect_to edit_camping_booking_path(@camping, @booking.id), notice: 'No se ha podido actualizar el registro'

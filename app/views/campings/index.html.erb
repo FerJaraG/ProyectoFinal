@@ -36,7 +36,7 @@
 								<h3><%= camping.name %></h3>
 								<p>Solo quedan <%= camping.campsites.where(status: false).count%> sitios disponibles!</p>
 								<p>Ubicación: <%= camping.commune.name%></p>
-								<p>Ranking: <%=@prom %> </p>
+								<p>Ranking: <%= camping.prom(camping.id) %> </p>
 								<p>Servicios del Camping:</p>
 								<ul> 
 									<% camping.services.each do |servicio|%>
