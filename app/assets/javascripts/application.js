@@ -29,5 +29,5 @@
 //= require google_map
 //= require jquery.easypiechart.min
 //= require respond.min
-//= require_tree .
+
 	

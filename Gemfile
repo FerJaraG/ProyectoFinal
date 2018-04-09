@@ -40,6 +40,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'kaminari'
+gem 'activeadmin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
